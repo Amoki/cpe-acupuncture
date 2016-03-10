@@ -10,6 +10,10 @@ function smarty_function_note_qcm($params, &$smarty){
         return "Tu es vraiment un gros Zéro !";
         break;
 
+        case 1: // Dans le cas où $note vaut 0
+        return "Tu es vraiment un gros Zéro !";
+        break;
+
         case 5: // Dans le cas où $note vaut 5
         return "Tu es très mauvais.";
         break;

@@ -1,7 +1,7 @@
 <?php
 	/*Connexion à la BDD */
 	try {
-		$connexion = new PDO('mysql:host=localhost; dbname=acuBD; charset=utf8', 'root', 'root');
+		$connexion = new PDO('mysql:host=localhost; dbname=acu; charset=utf8', 'root', 'root');
 
 	} catch (Exception $e) {
 		die('Erreur : '.$e->getMessage());
