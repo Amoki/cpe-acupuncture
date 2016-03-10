@@ -1,26 +1,30 @@
 <?php
-	require("lib/smarty/Smarty.class.php");
-
-	$smarty = new Smarty();
-
-	$smarty->display("mapage.html");
-
-	/*Initialisation de la BDD */
+	/*Connexion à la BDD */
 	try {
-		$bdd = new PDO('mysql:host=localhost; dbname=acuBD; charset=utf8', 'root', 'root');
+		$connexion = new PDO('mysql:host=localhost; dbname=acuBD; charset=utf8', 'root', 'root');
 
 	} catch (Exception $e) {
 		die('Erreur : '.$e->getMessage());
 	}
 
-	/* Requete SELECT */
-	$reponse = $bdd->query('SELECT * FROM patho');
-	echo '<p>DESC</p>';
-	while($donnees = $reponse->fetch()){
-		echo '<p>'.$donnees['desc'].'</p>';
-	}
+	/* Requête SELECT */
+	$query = $connexion ->prepare('SELECT * FROM patho');
+	$query->execute();
+	$liste_patho = array();
+	$i = 0;
+	while($donnees = $query->fetch()){
+		$liste_patho[$i]['idP'] = $donnees['idP'];
+		$liste_patho[$i]['mer'] = $donnees['mer'];
+		$liste_patho[$i]['type'] = $donnees['type'];
+		$liste_patho[$i]['desc'] = $donnees['desc'];
+		$i++;
+	} 
 
-	$reponse->closeCursor();
-
+	require("lib/smarty/Smarty.class.php");
 	
+	$tpl = new Smarty();
+
+	$tpl->assign('liste_patho', $liste_patho);
+
+	$tpl->display("mapage.html");
 ?> 
