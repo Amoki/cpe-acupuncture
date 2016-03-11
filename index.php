@@ -31,12 +31,4 @@
 		$liste_patho[$i]['desc'] = $donnees['desc'];
 		$i++;
 	} 
-
-	require("lib/smarty/Smarty.class.php");
-	
-	$tpl = new Smarty();
-
-	$tpl->assign('liste_patho', $liste_patho);
-
-	$tpl->display("mapage.html");
 ?> 
