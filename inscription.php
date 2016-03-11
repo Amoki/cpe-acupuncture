@@ -13,17 +13,18 @@
 	$nom = $_POST['name'];
 	$prenom = $_POST['lastname'];
 	
-	$query_test = "SELECT * FROM membre WHERE email=$email";
+	$query_test = "SELECT * FROM membre WHERE email='$email'";
+	//echo $query_test.'<br/>';
 	$result = $connexion ->prepare($query_test);
 	$result->execute();
 
-	if ($result ->rowCount() == 0) {
+	if ($result ->rowCount() > 0) {
     	echo 'Cette adresse mail existe déjà';
 	} else {
 	    $query = 'INSERT INTO membre(nom, prenom, email, mdp) VALUES("'.$nom.'", "'.$prenom.'", "'.$email.'", "'.$mdp.'")';
 		$req = $connexion->exec($query);
 
-		echo $query;
+		//echo $query;
 		if($req)
 		echo("L'utilisateur a bien été ajouté");
 		else

@@ -1,4 +1,5 @@
  <?php
+ /*Mise à jour des variables de session */
 	 session_start();
 
 	 if (isset($_SESSION['nom']))
