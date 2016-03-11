@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30-dev/53, created on 2016-03-10 16:46:20
+/* Smarty version 3.1.30-dev/53, created on 2016-03-11 13:35:28
   from "/Applications/MAMP/htdocs/cpe-acupuncture/mapage.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30-dev/53',
-  'unifunc' => 'content_56e196ccc4eaa1_60748312',
+  'unifunc' => 'content_56e2bb90208d68_27583964',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b6f065ffd8deefe5af097e49d5bbdfa8d765a766' => 
     array (
       0 => '/Applications/MAMP/htdocs/cpe-acupuncture/mapage.html',
-      1 => 1457624779,
+      1 => 1457691465,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_56e196ccc4eaa1_60748312 (Smarty_Internal_Template $_smarty_tpl) {
+function content_56e2bb90208d68_27583964 (Smarty_Internal_Template $_smarty_tpl) {
 if (!is_callable('smarty_function_note_qcm')) require_once '/Applications/MAMP/htdocs/cpe-acupuncture/lib/smarty/plugins/function.note_qcm.php';
 ?>
 <html>
@@ -29,8 +29,8 @@ if (!is_callable('smarty_function_note_qcm')) require_once '/Applications/MAMP/h
 	<title>Ma page de test</title>
 </head>
 <body>
-	<?php echo smarty_function_note_qcm(array('note'=>"1"),$_smarty_tpl);?>
-
+	<!-- <?php echo smarty_function_note_qcm(array('note'=>"15"),$_smarty_tpl);?>
+ -->
 	<table>
 		<thead>
 			<tr>
