@@ -1266,10 +1266,10 @@ INSERT INTO `keywords` (`idK`, `name`) VALUES
 DROP TABLE IF EXISTS `membre`;
 CREATE TABLE IF NOT EXISTS `membre` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `nom` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `prenom` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `mdp` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `nom` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `prenom` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `mdp` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `avatar` blob,
   PRIMARY KEY (`ID`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
