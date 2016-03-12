@@ -8,11 +8,14 @@
 	} catch (Exception $e) {
 		die('Erreur : '.$e->getMessage());
 	}
+	/* Récupération des données depuis le formulaire d'inscription */
 	$email = $_POST['mail'];
 	$mdp = $_POST['mdp'];
 	$nom = $_POST['name'];
 	$prenom = $_POST['lastname'];
 	
+
+	/* On teste l'existence de l'adresse mail dans la base de données */
 	$query_test = "SELECT * FROM membre WHERE email='$email'";
 	//echo $query_test.'<br/>';
 	$result = $connexion ->prepare($query_test);
@@ -28,7 +31,7 @@
 		if($req)
 		echo("L'utilisateur a bien été ajouté");
 		else
-			 echo 'erreur lors de l\'ajout';
+			 echo 'Erreur lors de l\'ajout de l\'utilisateur';
 		}
 	}
 

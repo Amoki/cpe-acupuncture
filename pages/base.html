@@ -47,9 +47,13 @@
         </nav>
       </div>
       <div id="user_info" class="container col-sm-3 col-md-3">
+        {if $logged }
         <img id="avatar" src=""/>
-        <a id="account" href="">Pseudo</a>
-        <a id="disconnect" href=""><img id="disconnect_img"/>...</a>
+        <a id="account" href="">{$username}</a><br/>
+        <a id="disconnect" href="deconnexion.php"><img id="disconnect_img"/>deconnexion</a>
+        {else}
+          <a href='index.php'>s'inscrire / se connecter</a>
+        {/if}
       </div>
     </div><!-- /.container-fluid -->
 
