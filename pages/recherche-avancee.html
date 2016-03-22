@@ -2,7 +2,7 @@
 {block name=title}Acupuncture et médecine chinoise - Recherche avancée{/block}
 {block name=content}
 <div class="col-sm-12 col-md-12">
-  <h1>Recherche avancée de pathologies</h1>
+  <h1 role="heading" aria-level=1 >Recherche avancée de pathologies</h1>
   <div id="recherche">
     <form id="search" action="" method="post">
       <div class="form-group">
@@ -10,21 +10,21 @@
           <div class="col-md-6 col-sm-12">
             <div class="row">
               <label for="symptomes">Symptômes&nbsp;:</label>
-              <input type="text" id="symptomes" class="form-control" required>
+              <input type="text" id="symptomes" class="form-control" placeholder="Symptômes">
             </div>
             <div class="row">
               <label for="type_patho">Type de pathologie&nbsp;:</label>
-              <select class="form-control" multiple></select>
+              <select class="form-control" role="listbox" multiple></select>
             </div>
           </div>
           <div class="col-md-6 col-sm-12">
             <div class="row">
               <label for="meridien">Méridien&nbsp;:</label>
-              <select class="form-control" multiple></select>
+              <select class="form-control" role="listbox" multiple></select>
             </div>
             <div class="row">
               <label for="mot_patho">Mots clés pathologies&nbsp;:</label>
-              <input type="text" id="mot_patho" class="form-control" required>
+              <input type="text" id="mot_patho" class="form-control" placeholder="Pathologie">
             </div>
           </div>
         </div>
@@ -36,32 +36,32 @@
             <!--   </div> -->
             <div class="btn-group col-md-4 col-sm-12" date-toggle="buttons">
               <label class="checkbox" for="mer_interne">
-                <input id="mer_interne" type="checkbox" name="meridien_group" value="interne"> Interne
+                <input id="mer_interne" role="checkbox" type="checkbox" name="meridien_group" value="interne"> Interne
               </label>
               <label class="checkbox" for="mer_externe">
-                <input id="mer_externe" type="checkbox" name="meridien_group" value="externe"> Externe
+                <input id="mer_externe" role="checkbox" type="checkbox" name="meridien_group" value="externe"> Externe
               </label>
             </div>
             <div class="btn-group col-md-4 col-sm-12" date-toggle="buttons">
               <label class="checkbox" for="tsang_plein">
-                <input id="mer_interne" type="checkbox" name="tsang_group" value="plein"> Plein
+                <input id="mer_interne" role="checkbox" type="checkbox" name="tsang_group" value="plein"> Plein
               </label>
               <label class="checkbox" for="tsang_vide">
-                <input id="mer_externe" type="checkbox" name="tsang_group" value="vide"> Vide
+                <input id="mer_externe" role="checkbox" type="checkbox" name="tsang_group" value="vide"> Vide
               </label>
               <label class="checkbox" for="tsang_chaud">
-                <input id="mer_interne" type="checkbox" name="tsang_group" value="chaud"> Chaud
+                <input id="mer_interne" role="checkbox" type="checkbox" name="tsang_group" value="chaud"> Chaud
               </label>
               <label class="checkbox" for="tsang_froid">
-                <input id="mer_externe" type="checkbox" name="tsang_group" value="froid"> Froid
+                <input id="mer_externe" role="checkbox" type="checkbox" name="tsang_group" value="froid"> Froid
               </label>
             </div>
             <div class="btn-group col-md-4 col-sm-12" date-toggle="buttons">
               <label class="checkbox" for="vois_vide">
-                <input id="vois_vide" type="checkbox" name="vois_group" value="vide"> Vide
+                <input id="vois_vide" role="checkbox" type="checkbox" name="vois_group" value="vide"> Vide
               </label>
               <label class="checkbox" for="vois_plein">
-                <input id="vois_plein" type="checkbox" name="vois_group" value="plein"> Plein
+                <input id="vois_plein" role="checkbox" type="checkbox" name="vois_group" value="plein"> Plein
               </label>
             </div>
           </fieldset>
@@ -69,8 +69,8 @@
         <!--             <input type="radio" name="group1" value="externe">Externe<br> -->
       </div>
     </div>
-    <input type="submit" id="btn_reinit" class="btn btn-default" value="Réinitialiser"/>
-    <input type="submit" id="btn_rechercher" class="btn btn-default" value="Rechercher"/>
+    <input type="submit" role="button" id="btn_reinit" class="btn btn-default" value="Réinitialiser"/>
+    <input type="submit" role="Submit" id="btn_rechercher" class="btn btn-default" value="Rechercher"/>
   </div>
 </form>
 

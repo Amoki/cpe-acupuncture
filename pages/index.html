@@ -3,60 +3,60 @@
 {block name=content}
 <div class="col-md-8 col-sm-12"> <!-- Formulaires -->
   <div class="jumbotron text-center">
-    <h2>Créer un compte</h2>
-    <form id="form_create_account" action="../inscription.php" method="post">
+    <h2 role="heading" aria-level=2 >Créer un compte</h2>
+    <form id="form_create_account" role="form" action="../inscription.php" method="post">
       <div class="form-group">
         <div class="row">
           <div class="col-md-6 col-sm-12">
             <div class="row">
               <label for="lastname">Nom&nbsp;:</label>
-              <input type="text" id="lastname" class="form-control" name="lastname" required>
+              <input type="text" role="textbox" id="lastname" class="form-control" name="lastname" placeholder="Nom"required aria-required="true">
             </div>
             <div class="row">
               <label for="e-mail">E-mail&nbsp;:</label>
-              <input type="email" id="e-mail" class="form-control" name="mail" required>
+              <input type="email" role="textbox" id="e-mail" class="form-control" name="mail" placeholder="E-mail" required aria-required="true">
             </div>
             <div class="row">
               <label for="password">Mot de passe&nbsp;:</label>
-              <input type="password" id="password" class="form-control" name="mdp" required>
+              <input type="password" role="textbox" id="password" class="form-control" name="mdp" placeholder="Mot de passe" required aria-required="true">
             </div>
           </div>
           <div class="col-md-6 col-sm-12">
             <div class="row">
               <label for="name">Prénom&nbsp;:</label>
-              <input type="text" id="name" class="form-control" name="name" required>
+              <input type="text" role="textbox" id="name" class="form-control" name="name" placeholder="Prénom" required aria-required="true">
             </div>
             <div class="row">
               <label for="e-mail_confirm">Confirmation e-mail&nbsp;:</label>
-              <input type="email" id="mail_confirm" class="form-control" required>
+              <input type="email" role="textbox" id="mail_confirm" class="form-control" placeholder="Confimation e-mail" required aria-required="true" aria-required="true">
             </div>
             <div class="row">
               <label for="password_confirm">Confirmation mot de passe&nbsp;:</label>
-              <input type="password" id="password_confirm" class="form-control" required>
+              <input role="textbox" type="password" id="password_confirm" class="form-control" placeholder="Confirmation mot de passe" required aria-required="true">
             </div>
           </div>
         </div>
-        <input type="submit" id="create_account" class="btn btn-default" value="Créer un compte"/>
+        <input role="Submit" type="submit" id="create_account" class="btn btn-default" value="Créer un compte"/>
       </div>
     </form>
 
-    <h2>S'identifer</h2>
-    <form id="form_identify" action="../connexion.php" method="post">
+    <h2 role="heading" aria-level=2 >S'identifer</h2>
+    <form id="form_identify" role="form" action="../connexion.php" method="post">
       <div class="form-group">
         <div class="row">
           <div class="col-md-6 col-sm-12">
             <div class="row">
               <label for="e-mail_loggin">E-mail&nbsp;:</label>
-              <input type="email" id="e-mail_loggin" class="form-control" name="email" required>
+              <input type="email" role="textbox" id="e-mail_loggin" class="form-control" name="email" required aria-required="true">
             </div>
           </div>
           <div class="col-md-6 col-sm-12">
             <div class="row">
               <label for="psw_loggin">Mot de passe&nbsp;:</label>
-              <input type="password" id="psw_loggin" class="form-control" name="mdp" required>
+              <input type="password" role="textbox" id="psw_loggin" class="form-control" name="mdp" required aria-required="true">
             </div>
           </div>
-          <input type="submit" id="identify" class="btn btn-default" value="S'identifier"/>
+          <input role="Submit" type="submit" id="identify" class="btn btn-default" value="S'identifier"/>
         </div>
       </div>
     </form>
