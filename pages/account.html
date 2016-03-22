@@ -1,0 +1,56 @@
+{extends file="pages/base.html"}
+{block name=title}Acupuncture et médecine chinoise - Mon compte {/block}
+{block name=content}
+<div class="col-md-8 col-sm-12"> <!-- Formulaires -->
+  <div class="jumbotron text-center">
+    <h2 role="heading" aria-level=2 >Mon compte</h2>
+    <form id="form_create_account" role="form" action="../inscription.php" method="post">
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <div class="row">
+              <label for="lastname">Nom&nbsp;:</label>
+              <input type="text" role="textbox" id="lastname" class="form-control" name="lastname" placeholder="Nom"required aria-required="true">
+            </div>
+            <div class="row">
+              <label for="e-mail">E-mail&nbsp;:</label>
+              <input type="email" role="textbox" id="e-mail" class="form-control" name="mail" placeholder="E-mail" required aria-required="true">
+            </div>
+            <div class="row">
+              <label for="new_e-mail">Nouvel e-mail&nbsp;:</label>
+              <input type="email" role="textbox" id="new_e-mail" class="form-control" name="mail" placeholder="nouvel e-mail" required aria-required="true">
+            </div>
+            <div class="row">
+              <label for="password">Mot de passe&nbsp;:</label>
+              <input type="password" role="textbox" id="password" class="form-control" name="mdp" placeholder="Mot de passe" required aria-required="true">
+            </div>
+            <div class="row">
+              <label for="new_password">Nouveau mot de passe&nbsp;:</label>
+              <input type="new_password" role="textbox" id="password" class="form-control" name="mdp" placeholder="nouveau mot de passe" required aria-required="true">
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="row">
+              <label for="name">Prénom&nbsp;:</label>
+              <input type="text" role="textbox" id="name" class="form-control" name="name" placeholder="Prénom" required aria-required="true">
+            </div>
+            <div class="row">
+              <label for="e-mail_confirm">Confirmation e-mail&nbsp;:</label>
+              <input type="email" role="textbox" id="mail_confirm" class="form-control" placeholder="Confimation e-mail" required aria-required="true" aria-required="true">
+            </div>
+            <div class="row">
+              <label for="password_confirm">Confirmation mot de passe&nbsp;:</label>
+              <input role="textbox" type="password" id="password_confirm" class="form-control" placeholder="Confirmation mot de passe" required aria-required="true">
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="row">
+             <label for="avatar">Modifier mon avatar&nbsp;:</label>
+              <input role="textbox" type="textbox" id="avatar" class="form-control">
+            </div>
+        </div>
+        <input role="Submit" type="submit" id="create_account" class="btn btn-default" value="Créer un compte"/>
+      </div>
+    </form>
+  </div>
+</div>
