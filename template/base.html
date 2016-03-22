@@ -22,49 +22,55 @@
   <div class="container">
     <div class="row">
       <div id="navigation" class="col-sm-12 col-md-12">
-       <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button aria-expanded="false" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-     <!--  <a class="navbar-brand" href="#">!</a> -->
-    </div>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+               <a class="navbar-brand" href="#"></a>
+            </div>
 
-    <div aria-expanded="false" class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
-     <ul class="nav navbar-nav">
-        <li> <a role="link" href="index.php?page=index" accesskey="1" title="Accueil">Accueil</a></li>
-        <li><a role="link" href="index.php?page=consultation" accesskey="5" title="Consultation des pathologies">Consultation </a></li>
-        <li><a role="link" href="index.php?page=recherche-avancee" accesskey="4" title="Recherche avancée de pathologies">Recherche avancée </a></li>
-        <li><a role="link" href="index.php?page=informations" accesskey="9" title="Informations">Informations</a></li> 
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        {if $logged }
-        <img id="avatar" src=""/>
-        <a role="link" id="account" href="index.php?page=account">{$username}</a><br/>
-        <a role="link" accesskey="q" id="disconnect" href="index.php?page=deconnexion"><img id="disconnect_img"/>deconnexion</a>
-        {else}
-          <a role="link" href="index.php">s'inscrire / se connecter</a>
-        {/if}
-      </ul>
-    </div>
-  </div>
-</nav>
+            <div aria-expanded="false" class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li> <a role="link" href="index.php?page=index" accesskey="1" title="Accueil">Accueil</a></li>
+                <li><a role="link" href="index.php?page=consultation" accesskey="5" title="Consultation des pathologies">Consultation </a></li>
+                <li><a role="link" href="index.php?page=recherche-avancee" accesskey="4" title="Recherche avancée de pathologies">Recherche avancée </a></li>
+                <li><a role="link" href="index.php?page=informations" accesskey="9" title="Informations">Informations</a></li> 
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                {if $logged }
+                <img id="avatar" src=""/>
+                <a role="link" id="account" href="index.php?page=account">{$username}</a><br/>
+                <a role="link" accesskey="q" id="disconnect" href="index.php?page=deconnexion"><img id="disconnect_img"/>deconnexion</a>
+                {else}
+                <a role="link" href="index.php">s'inscrire / se connecter</a>
+                {/if}
+              </ul>
+            </div>
+          </div>
+        </nav>
       </div>
 
     </div><!-- /.container-fluid -->
 
 
 
-    <div class="row"> <!-- "body" -->
 
-      {block name=content}contenu de la page{/block}
+  <div class="row"> <!-- "body" -->
 
-    </div> <!-- fin body -->
+    {block name=content}contenu de la page{/block}
 
-  </div> <!--Fin container-->
+  </div> <!-- fin body -->
+
+</div> <!--Fin container-->
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <!-- BOOTSTRAP JS -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </body>
 </html>
