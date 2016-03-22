@@ -7,15 +7,15 @@
       <h1 role="heading" aria-level=1 >Recherche avancée de pathologies</h1>
     </div>
     <div class="panel-body">
-     
-      
-      
+
+
+
       <div id="recherche">
         <form id="search" action="index.php" method="post">
           <div class="form-group">
             <div class="row">
 
-              <div class="row">
+            <div class="row">
                 <div class="col-md-6 col-sm-12">
                   <label for="symptomes">Symptômes&nbsp;:</label>
                   <input type="text" id="symptomes" class="form-control" placeholder="Symptômes">
@@ -25,7 +25,7 @@
                   <select class="form-control" role="listbox" multiple></select>
                 </div>
               </div>
-              <div class="row">
+              <div class="row littlespacer">
                 <div class="col-md-6 col-sm-12">
 
                   <label for="meridien">Méridien&nbsp;:</label>
@@ -38,45 +38,47 @@
               </div>
             </div>
 
-            <div class="row">
+            <div class="row littlespacer">
               <!-- <div class="col-md-12 col-sm-12"> -->
               <fieldset>
                 <legend>Caractéristiques&nbsp;:</legend>
                 <!--   </div> -->
-                <div class="btn-group col-md-4 col-sm-12" date-toggle="buttons">
-                  <label class="checkbox" for="mer_interne">
-                    <input id="mer_interne" role="checkbox" type="checkbox" name="meridien_group" value="interne"> Interne
-                  </label>
-                  <label class="checkbox" for="mer_externe">
-                    <input id="mer_externe" role="checkbox" type="checkbox" name="meridien_group" value="externe"> Externe
-                  </label>
-                </div>
-                <div class="btn-group col-md-4 col-sm-12" date-toggle="buttons">
-                  <label class="checkbox" for="tsang_plein">
-                    <input id="mer_interne" role="checkbox" type="checkbox" name="tsang_group" value="plein"> Plein
-                  </label>
-                  <label class="checkbox" for="tsang_vide">
-                    <input id="mer_externe" role="checkbox" type="checkbox" name="tsang_group" value="vide"> Vide
-                  </label>
-                  <label class="checkbox" for="tsang_chaud">
-                    <input id="mer_interne" role="checkbox" type="checkbox" name="tsang_group" value="chaud"> Chaud
-                  </label>
-                  <label class="checkbox" for="tsang_froid">
-                    <input id="mer_externe" role="checkbox" type="checkbox" name="tsang_group" value="froid"> Froid
-                  </label>
-                </div>
-                <div class="btn-group col-md-4 col-sm-12" date-toggle="buttons">
-                  <label class="checkbox" for="vois_vide">
-                    <input id="vois_vide" role="checkbox" type="checkbox" name="vois_group" value="vide"> Vide
-                  </label>
-                  <label class="checkbox" for="vois_plein">
-                    <input id="vois_plein" role="checkbox" type="checkbox" name="vois_group" value="plein"> Plein
-                  </label>
+                <div class="col-md-12 col-sm-12">
+                  <div class="btn-group col-md-4 col-sm-12" date-toggle="buttons">
+                    <label class="checkbox" for="mer_interne">
+                      <input id="mer_interne" role="checkbox" type="checkbox" name="meridien_group" value="interne"> Interne
+                    </label>
+                    <label class="checkbox" for="mer_externe">
+                      <input id="mer_externe" role="checkbox" type="checkbox" name="meridien_group" value="externe"> Externe
+                    </label>
+                  </div>
+                  <div class="btn-group col-md-4 col-sm-12" date-toggle="buttons">
+                    <label class="checkbox" for="tsang_plein">
+                      <input id="mer_interne" role="checkbox" type="checkbox" name="tsang_group" value="plein"> Plein
+                    </label>
+                    <label class="checkbox" for="tsang_vide">
+                      <input id="mer_externe" role="checkbox" type="checkbox" name="tsang_group" value="vide"> Vide
+                    </label>
+                    <label class="checkbox" for="tsang_chaud">
+                      <input id="mer_interne" role="checkbox" type="checkbox" name="tsang_group" value="chaud"> Chaud
+                    </label>
+                    <label class="checkbox" for="tsang_froid">
+                      <input id="mer_externe" role="checkbox" type="checkbox" name="tsang_group" value="froid"> Froid
+                    </label>
+                  </div>
+                  <div class="btn-group col-md-4 col-sm-12" date-toggle="buttons">
+                    <label class="checkbox" for="vois_vide">
+                      <input id="vois_vide" role="checkbox" type="checkbox" name="vois_group" value="vide"> Vide
+                    </label>
+                    <label class="checkbox" for="vois_plein">
+                      <input id="vois_plein" role="checkbox" type="checkbox" name="vois_group" value="plein"> Plein
+                    </label>
+                  </div>
                 </div>
               </fieldset>
             </div>
           </div>
-          <div class="row">
+          <div class="row spacer pull-right">
             <input type="reset" role="button" id="btn_reinit" class="btn btn-default" value="Réinitialiser"/>
             <input type="submit" role="Submit" id="btn_rechercher" class="btn btn-primary" value="Rechercher"/>
           </div>
@@ -86,7 +88,8 @@
     </div>
   </div>
 </div>
-
+<div class="row largespacer">
+      </div>
 <div id="resulat" class="table-responsive">
   <table class="table table-striped table-sortable">
     <thead>

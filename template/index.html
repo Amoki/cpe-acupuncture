@@ -4,78 +4,81 @@
 <div class="col-md-8 col-sm-12"> <!-- Formulaires -->
   <div class="jumbotron text-center">
     <!-- <h2 role="heading" aria-level=2>Créer un compte</h2> -->
-    <legend>Créer un compte</legend>
+    <legend role="heading" aria-level=2>Créer un compte</legend>
     <form id="form_create_account" role="form" action="index.php?action=inscription&page=account" method="post" class="form-horizontal">
-    <fieldset>
-      <div class="form-group">
-        <div class="row">
-
-          <div class="row"> 
-            <div class="col-md-6 col-sm-12">
-              <label for="lastname">Nom&nbsp;:</label>
-              <input type="text" role="textbox" id="lastname" class="form-control" name="lastname" placeholder="Nom"required aria-required="true">
-            </div>
-            <div class="col-md-6 col-sm-12">
-              <label for="name">Prénom&nbsp;:</label>
-              <input type="text" role="textbox" id="name" class="form-control" name="name" placeholder="Prénom" required aria-required="true">
-            </div>
-          </div>
+      <fieldset>
+        <div class="form-group">
           <div class="row">
-           <div class="col-md-6 col-sm-12">
-            <label for="e-mail">E-mail&nbsp;:</label>
-            <input type="email" role="textbox" id="e-mail" class="form-control" name="mail" placeholder="E-mail" required aria-required="true">
+            <div class="row"> 
+              <div class="col-md-6 col-sm-12">
+                <label for="lastname">Nom&nbsp;:</label>
+                <input type="text" role="textbox" id="lastname" class="form-control" name="lastname" placeholder="Nom"required aria-required="true">
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <label for="name">Prénom&nbsp;:</label>
+                <input type="text" role="textbox" id="name" class="form-control" name="name" placeholder="Prénom" required aria-required="true">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <label for="e-mail">E-mail&nbsp;:</label>
+                <input type="email" role="textbox" id="e-mail" class="form-control" name="mail" placeholder="E-mail" required aria-required="true">
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <label for="e-mail_confirm">Confirmation e-mail&nbsp;:</label>
+                <input type="email" role="textbox" id="mail_confirm" class="form-control" placeholder="Confimation e-mail" required aria-required="true" aria-required="true">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <label for="password">Mot de passe&nbsp;:</label>
+                <input type="password" role="textbox" id="password" class="form-control" name="mdp" placeholder="Mot de passe" required aria-required="true">
+              </div>
+
+              <div class="col-md-6 col-sm-12">
+                <label for="password_confirm">Confirmation mot de passe&nbsp;:</label>
+                <input role="textbox" type="password" id="password_confirm" class="form-control" placeholder="Confirmation mot de passe" required aria-required="true">
+              </div>
+            </div>
+            <div class="row spacer">
+              <input role="Submit" type="submit" id="create_account" class="btn btn-primary" value="Créer un compte"/>
+            </div>
           </div>
-          <div class="col-md-6 col-sm-12">
-            <label for="e-mail_confirm">Confirmation e-mail&nbsp;:</label>
-            <input type="email" role="textbox" id="mail_confirm" class="form-control" placeholder="Confimation e-mail" required aria-required="true" aria-required="true">
-          </div>
-        </div>
-        <div class="row">
-         <div class="col-md-6 col-sm-12">
-          <label for="password">Mot de passe&nbsp;:</label>
-          <input type="password" role="textbox" id="password" class="form-control" name="mdp" placeholder="Mot de passe" required aria-required="true">
-        </div>
-        
-        <div class="col-md-6 col-sm-12">
-          <label for="password_confirm">Confirmation mot de passe&nbsp;:</label>
-          <input role="textbox" type="password" id="password_confirm" class="form-control" placeholder="Confirmation mot de passe" required aria-required="true">
-        </div>
+        </fieldset>
+      </form>
+      <div class="row largespacer">
       </div>
-      <div class="row">
-       <input role="Submit" type="submit" id="create_account" class="btn btn-default" value="Créer un compte"/>
-     </div>
-   </div>
-   </fieldset>
- </form>
- <div class="row space">
- </div>
- <!-- <h2 role="heading" aria-level=2 >S'identifer</h2> -->
- <legend>S'identifer</legend>
- <form id="form_identify" role="form" action="index.php?action=connexion&page=account" method="post" class="form-horizontal">
- <fieldset>
-  <div class="form-group">
-    <div class="row">
-      <div class="row">
-        <div class="col-md-6 col-sm-12">
-          <label for="e-mail_loggin">E-mail&nbsp;:</label>
-          <input type="email" role="textbox" id="e-mail_loggin" class="form-control" name="email" placeholder="E-mail" required aria-required="true">
-          </div>
-        <div class="col-md-6 col-sm-12">
-          <label for="psw_loggin">Mot de passe&nbsp;:</label>
-          <input type="password" role="textbox" id="psw_loggin" class="form-control" name="mdp" placeholder="Mot de passe" required aria-required="true">
-        </div>
-        <div class="row">
-          <input role="Submit" type="submit" id="identify" class="btn btn-default" value="S'identifier"/>
-        </div>
+      <!-- <h2 role="heading" aria-level=2 >S'identifer</h2> -->
+      <legend role="heading" aria-level=2>S'identifer</legend>
+      <form id="form_identify" role="form" action="index.php?action=connexion&page=account" method="post" class="form-horizontal">
+        <fieldset>
+          <div class="form-group">
+            <div class="row">
+              <div class="row">
+                <div class="col-md-6 col-sm-12">
+                  <label for="e-mail_loggin">E-mail&nbsp;:</label>
+                  <input type="email" role="textbox" id="e-mail_loggin" class="form-control" name="email" placeholder="E-mail" required aria-required="true">
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <label for="psw_loggin">Mot de passe&nbsp;:</label>
+                  <input type="password" role="textbox" id="psw_loggin" class="form-control" name="mdp" placeholder="Mot de passe" required aria-required="true">
+                </div>
+                
+              </div>
+              <div class="row spacer">
+                  <input role="Submit" type="submit" id="identify" class="btn btn-primary" value="S'identifier"/>
+                </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div> <!-- Fin formulaires -->
+
+    <div class="col-md-4 col-sm-12"> <!-- Flux RSS -->
+      <div class="jumbotron">
+        <h2>Flux RSS</h2>
+        <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
       </div>
     </div>
-    </fieldset>
-  </form>
-</div>
-</div> <!-- Fin formulaires -->
 
-<div class="col-md-4 col-sm-12"> <!-- Flux RSS -->
-
-</div>
-
-{/block}
+    {/block}
