@@ -36,10 +36,10 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                <li><a role="link" href="/" accesskey="1" title="Accueil">Accueil</a></li>
-                <li><a role="link" href="" accesskey="5" title="Consultation des pathologies">Consultation </a></li>
-                <li><a role="link" href="/" accesskey="4" title="Recherche avancée de pathologies">Recherche avancée </a></li>
-                <li><a role="link" href="/" accesskey="9" title="Informations">Informations</a></li> 
+                <li><a role="link" href="index.php?page=index" accesskey="1" title="Accueil">Accueil</a></li>
+                <li><a role="link" href="index.php?page=consultation" accesskey="5" title="Consultation des pathologies">Consultation </a></li>
+                <li><a role="link" href="index.php?page=recherche-avancee" accesskey="4" title="Recherche avancée de pathologies">Recherche avancée </a></li>
+                <li><a role="link" href="index.php?page=information" accesskey="9" title="Informations">Informations</a></li> 
               </ul>
 
             </div><!-- /.navbar-collapse -->
@@ -49,10 +49,10 @@
       <div id="user_info" class="container col-sm-3 col-md-3">
         {if $logged }
         <img id="avatar" src=""/>
-        <a role="link" id="account" href="">{$username}</a><br/>
-        <a role="link" id="disconnect" href="deconnexion.php"><img id="disconnect_img"/>deconnexion</a>
+        <a role="link" id="account" href="index.php?page=account">{$username}</a><br/>
+        <a role="link" id="disconnect" href="index.php?page=deconnexion"><img id="disconnect_img"/>deconnexion</a>
         {else}
-          <a role="link"href='index.php'>s'inscrire / se connecter</a>
+          <a role="link" href="index.php">s'inscrire / se connecter</a>
         {/if}
       </div>
     </div><!-- /.container-fluid -->
