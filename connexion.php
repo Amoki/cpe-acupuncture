@@ -26,7 +26,7 @@
 	{
 	    session_start();
 	    $_SESSION['nom'] = $resultat['nom'];
-	    echo '<br/>Vous êtes connecté '.$_SESSION['nom'].'!';
+	    $_SESSION['prenom'] = $resultat['prenom'];
+	    header('Location: index.php');
 	}
-	echo "<a href='index.php'>Retourner à l'index</a> ";
 ?>

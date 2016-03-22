@@ -8,26 +8,30 @@
 	} catch (Exception $e) {
 		die('Erreur : '.$e->getMessage());
 	}
+	/* Récupération des données depuis le formulaire d'inscription */
 	$email = $_POST['mail'];
 	$mdp = $_POST['mdp'];
 	$nom = $_POST['name'];
 	$prenom = $_POST['lastname'];
 	
-	$query_test = "SELECT * FROM membre WHERE email=$email";
+
+	/* On teste l'existence de l'adresse mail dans la base de données */
+	$query_test = "SELECT * FROM membre WHERE email='$email'";
+	//echo $query_test.'<br/>';
 	$result = $connexion ->prepare($query_test);
 	$result->execute();
 
-	if ($result ->rowCount() == 0) {
+	if ($result ->rowCount() > 0) {
     	echo 'Cette adresse mail existe déjà';
 	} else {
 	    $query = 'INSERT INTO membre(nom, prenom, email, mdp) VALUES("'.$nom.'", "'.$prenom.'", "'.$email.'", "'.$mdp.'")';
 		$req = $connexion->exec($query);
 
-		echo $query;
+		//echo $query;
 		if($req)
 		echo("L'utilisateur a bien été ajouté");
 		else
-			 echo 'erreur lors de l\'ajout';
+			 echo 'Erreur lors de l\'ajout de l\'utilisateur';
 		}
 	}
 
