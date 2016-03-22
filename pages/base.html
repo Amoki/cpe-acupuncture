@@ -49,16 +49,11 @@
       <div id="user_info" class="container col-sm-3 col-md-3">
         {if $logged }
         <img id="avatar" src=""/>
-<<<<<<< HEAD
-        <a role="link" id="account" href="/pages/account.html">Pseudo</a>
-        <a role="link" id="disconnect" href=""><img id="disconnect_img"/>...</a>
-=======
-        <a id="account" href="">{$username}</a><br/>
-        <a id="disconnect" href="deconnexion.php"><img id="disconnect_img"/>deconnexion</a>
+        <a role="link" id="account" href="">{$username}</a><br/>
+        <a role="link" id="disconnect" href="deconnexion.php"><img id="disconnect_img"/>deconnexion</a>
         {else}
-          <a href='index.php'>s'inscrire / se connecter</a>
+          <a role="link"href='index.php'>s'inscrire / se connecter</a>
         {/if}
->>>>>>> origin/master
       </div>
     </div><!-- /.container-fluid -->
 
