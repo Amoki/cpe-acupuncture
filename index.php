@@ -3,6 +3,7 @@
 	session_start();
 
     $logged = false;
+    $username = "";
 	if (isset($_SESSION['nom']))
 	{
 	    $logged = true;
@@ -17,5 +18,5 @@
     $tpl->assign('logged', $logged);
     $tpl->assign('username', $username);
 
-    $tpl->display("pages/index.html");
+    $tpl->display("pages/recherche-avancee.html");
 ?> 
