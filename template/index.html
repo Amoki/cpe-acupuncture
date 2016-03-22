@@ -3,8 +3,10 @@
 {block name=content}
 <div class="col-md-8 col-sm-12"> <!-- Formulaires -->
   <div class="jumbotron text-center">
-    <h2 role="heading" aria-level=2>Créer un compte</h2>
-    <form id="form_create_account" role="form" action="index.php?action=inscription&page=account" method="post">
+    <!-- <h2 role="heading" aria-level=2>Créer un compte</h2> -->
+    <legend>Créer un compte</legend>
+    <form id="form_create_account" role="form" action="index.php?action=inscription&page=account" method="post" class="form-horizontal">
+    <fieldset>
       <div class="form-group">
         <div class="row">
 
@@ -43,11 +45,14 @@
        <input role="Submit" type="submit" id="create_account" class="btn btn-default" value="Créer un compte"/>
      </div>
    </div>
+   </fieldset>
  </form>
  <div class="row space">
  </div>
- <h2 role="heading" aria-level=2 >S'identifer</h2>
- <form id="form_identify" role="form" action="index.php?action=connexion&page=account" method="post">
+ <!-- <h2 role="heading" aria-level=2 >S'identifer</h2> -->
+ <legend>S'identifer</legend>
+ <form id="form_identify" role="form" action="index.php?action=connexion&page=account" method="post" class="form-horizontal">
+ <fieldset>
   <div class="form-group">
     <div class="row">
       <div class="row">
@@ -64,6 +69,7 @@
         </div>
       </div>
     </div>
+    </fieldset>
   </form>
 </div>
 </div> <!-- Fin formulaires -->
