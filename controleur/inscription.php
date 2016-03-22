@@ -1,7 +1,6 @@
 <?php
 
 	/*Connexion à la BDD */
-	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	try {
 		$connexion = new PDO('mysql:host=localhost; dbname=acu; charset=utf8', 'root', 'root');
 
@@ -23,15 +22,26 @@
 
 	if ($result ->rowCount() > 0) {
     	echo 'Cette adresse mail existe déjà';
-	} else {
+	} 
+	else {
 	    $query = 'INSERT INTO membre(nom, prenom, email, mdp) VALUES("'.$nom.'", "'.$prenom.'", "'.$email.'", "'.$mdp.'")';
 		$req = $connexion->exec($query);
 
 		//echo $query;
-		if($req)
-		echo("L'utilisateur a bien été ajouté");
-		else
+		if(! $req){
 			 echo 'Erreur lors de l\'ajout de l\'utilisateur';
+		}
+		else{
+			// Vérification des identifiants
+			$query = "SELECT * FROM membre WHERE email = '$email'";
+			//echo $query;
+			$req = $connexion->prepare($query);
+			$req->execute();
+
+			$resultat = $req->fetch();
+
+			$_SESSION['nom'] = $resultat['nom'];
+			$_SESSION['prenom'] = $resultat['prenom'];
 		}
 	}
 

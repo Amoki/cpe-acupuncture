@@ -24,9 +24,7 @@
 	}
 	else
 	{
-	    session_start();
 	    $_SESSION['nom'] = $resultat['nom'];
 	    $_SESSION['prenom'] = $resultat['prenom'];
-	    header('Location: index.php');
 	}
 ?>
