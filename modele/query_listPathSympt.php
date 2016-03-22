@@ -1,11 +1,7 @@
 <?php
-include("connectBD.php");
-
 function listPathSympt()
 {
-
-	$connexion=connectBD();
-	
+	include(_PATH_."/modele/connectBD.php");
 	/* Requête SELECT */
 	$rawquery = 'SELECT (p.desc) as patho, (s.desc) as sympt
 						FROM symptome s
@@ -36,6 +32,4 @@ function listPathSympt()
 
 	return $liste_patho;
 }
-
-listPathSympt();
 ?>

@@ -6,10 +6,10 @@
     if (isset($_GET['action']) && file_exists(_CTRL_.str_replace('.', '', $_GET['action']).'.php'))
         include(_CTRL_.$_GET['action'].'.php');
 
-    if (isset($_GET['page']) && file_exists(_CTRL_.str_replace('.', '', $_GET['page']).'.php'))
+    if (isset($_GET['page']) && file_exists(_VUE_.str_replace('.', '', $_GET['page']).'.php'))
         include(_VUE_.$_GET['page'].'.php');
     else
-        include(_CTRL_.'index.php');
+        include(_VUE_.'index.php');
 
 
     $logged = false;

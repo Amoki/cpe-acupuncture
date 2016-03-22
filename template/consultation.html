@@ -7,17 +7,23 @@
     <table class="table table-striped table-sortable">
       <thead>
         <tr>
-          <th role="columnheader" class="sorted">Symptômes</th>
           <th role="columnheader" class="sorted">Pathologies</th>
-          <th role="columnheader" class="sorted">Type de méridien</th>
+          <th role="columnheader" class="sorted">Symptômes</th>
         </tr>
       </thead>
       <tbody>
-        {foreach from=$liste_patho item=patho}
+        {foreach from=$liste_patho item=symptomes key=patho}
         <tr>
-          <td role="cell" class="sorted">{$patho.mer}</td>
-          <td role="cell" class="sorted">{$patho.type}</td>
-          <td role="cell" class="sorted">{$patho.desc}</td>
+          <td role="cell" class="sorted">{$patho}</td>
+          <td role="cell" class="sorted">
+            <ul class="list-group">
+              {foreach from=$symptomes item=symptome}
+                <li role="listitem" class="list-group-item">
+                  {$symptome}
+                </li>
+              {/foreach}  
+            </ul>
+          </td>
         </tr>
         {/foreach}
       </tbody>
