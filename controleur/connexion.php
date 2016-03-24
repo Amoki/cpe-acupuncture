@@ -8,7 +8,7 @@
 	}
 	/*Reception des données du formulaire */
 	$email = $_POST['email'];
-	$mdp = $_POST['mdp'];
+	$mdp = password_hash($_POST['mdp'], PASSWORD_BCRYPT);
 
 	// Vérification des identifiants
 	$query = "SELECT * FROM membre WHERE email = '$email' AND mdp = '$mdp'";
