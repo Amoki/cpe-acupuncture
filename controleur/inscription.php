@@ -25,7 +25,7 @@
 	} 
 	else {
 	    $hashed_password = password_hash($mdp, PASSWORD_BCRYPT);
-	    $query = 'INSERT INTO membre(nom, prenom, email, mdp) VALUES("'.$nom.'", "'.$prenom.'", "'.$email.'", "'.$mdp.'")';
+	    $query = 'INSERT INTO membre(nom, prenom, email, mdp) VALUES("'.$nom.'", "'.$prenom.'", "'.$email.'", "'.$hashed_password.'")';
 		$req = $connexion->exec($query);
 
 		//echo $query;
