@@ -8,88 +8,136 @@
     </div>
     <div class="panel-body">
 
-
-
       <div id="recherche">
         <form id="search" action="index.php" method="post">
           <div class="form-group">
-            <div class="row">
+
 
             <div class="row">
-                <div class="col-md-6 col-sm-12">
-                  <label for="symptomes">Symptômes&nbsp;:</label>
-                  <input type="text" id="symptomes" class="form-control" placeholder="Symptômes">
-                </div>
-                <div class="col-md-6 col-sm-12">
-                  <label for="type_patho">Type de pathologie&nbsp;:</label>
-                  <select class="form-control" role="listbox" multiple></select>
-                </div>
+              <div class="col-md-6 col-sm-12">
+                <label for="meridien">Méridien&nbsp;:</label>
+                <select class="form-control" role="listbox" multiple></select>
+
               </div>
-              <div class="row littlespacer">
-                <div class="col-md-6 col-sm-12">
-
-                  <label for="meridien">Méridien&nbsp;:</label>
-                  <select class="form-control" role="listbox" multiple></select>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                  <label for="mot_patho">Mots clés pathologies&nbsp;:</label>
-                  <input type="text" id="mot_patho" class="form-control" placeholder="Pathologie">
-                </div>
+              <div class="col-md-6 col-sm-12">
+                <label for="mot_patho">Mots clés pathologies&nbsp;:</label>
+                <input type="text" id="mot_patho" class="form-control" placeholder="Pathologie">
               </div>
             </div>
+            <div class="row littlespacer">
+
+              <div class="col-md-6 col-sm-12">
+                <label for="symptomes">Symptômes&nbsp;:</label>
+                <input type="text" id="symptomes" class="form-control" placeholder="Symptômes">
+              </div>
+            </div>
+
+
+            <!-- <div class="row littlespacer">
+          </div> -->
+          <div class="form-group">
 
             <div class="row littlespacer">
-              <!-- <div class="col-md-12 col-sm-12"> -->
-              <fieldset>
-                <legend>Caractéristiques&nbsp;:</legend>
-                <!--   </div> -->
-                <div class="col-md-12 col-sm-12">
-                  <div class="btn-group col-md-4 col-sm-12" date-toggle="buttons">
-                    <label class="checkbox" for="mer_interne">
-                      <input id="mer_interne" role="checkbox" type="checkbox" name="meridien_group" value="interne"> Interne
-                    </label>
-                    <label class="checkbox" for="mer_externe">
-                      <input id="mer_externe" role="checkbox" type="checkbox" name="meridien_group" value="externe"> Externe
-                    </label>
-                  </div>
-                  <div class="btn-group col-md-4 col-sm-12" date-toggle="buttons">
-                    <label class="checkbox" for="tsang_plein">
-                      <input id="mer_interne" role="checkbox" type="checkbox" name="tsang_group" value="plein"> Plein
-                    </label>
-                    <label class="checkbox" for="tsang_vide">
-                      <input id="mer_externe" role="checkbox" type="checkbox" name="tsang_group" value="vide"> Vide
-                    </label>
-                    <label class="checkbox" for="tsang_chaud">
-                      <input id="mer_interne" role="checkbox" type="checkbox" name="tsang_group" value="chaud"> Chaud
-                    </label>
-                    <label class="checkbox" for="tsang_froid">
-                      <input id="mer_externe" role="checkbox" type="checkbox" name="tsang_group" value="froid"> Froid
-                    </label>
-                  </div>
-                  <div class="btn-group col-md-4 col-sm-12" date-toggle="buttons">
-                    <label class="checkbox" for="vois_vide">
-                      <input id="vois_vide" role="checkbox" type="checkbox" name="vois_group" value="vide"> Vide
-                    </label>
-                    <label class="checkbox" for="vois_plein">
-                      <input id="vois_plein" role="checkbox" type="checkbox" name="vois_group" value="plein"> Plein
-                    </label>
-                  </div>
+              <label class="radio" for="type_patho"> Type de Pathologie
+              </label>
+            </div>
+            <div class="row">
+              <div class="radio col-md-3 col-sm-3">
+                <label>
+                  <input name="type_patho" id="rMeridien" value="m" checked="" type="radio">
+                  Méridien
+                </label>
+              </div>
+              <div class="col-md-9 col-sm-6">
+                <div class="checkbox"id="CbM">
+                  <label class=".checkbox-inline" for="mi">
+                    <input id="mi" role="checkbox" type="checkbox" name="meridien_group" value="mi"> Interne
+                  </label>
+                  <label class=".checkbox-inline" for="me">
+                    <input id="me" role="checkbox" type="checkbox" name="meridien_group" value="me"> Externe
+                  </label>
                 </div>
-              </fieldset>
+              </div>
+            </div>
+            <div class="row">
+              <div class="radio col-md-3 col-sm-3">
+                <label>
+                  <input name="type_patho" id="rTsangFu" value="tf" type="radio">
+                  Tsang Fu
+                </label>
+              </div>
+              <div class="col-md-9 col-sm-6">
+               <div class="checkbox" id="CbTf"> 
+                <label class=".checkbox-inline" for="tfp">
+                  <input id="tfp" role="checkbox" type="checkbox" name="tsang_group" value="tfp"> Plein
+                </label>
+                <label class=".checkbox-inline" for="tfv">
+                  <input id="tfv" role="checkbox" type="checkbox" name="tsang_group" value="tfv"> Vide
+                </label>
+                <label class=".checkbox-inline" for="yfc">
+                  <input id="tfc" role="checkbox" type="checkbox" name="tsang_group" value="tfc"> Chaud
+                </label>
+                <label class=".checkbox-inline" for="tff">
+                  <input id="tff" role="checkbox" type="checkbox" name="tsang_group" value="tff"> Froid
+                </label>
+              </div>
             </div>
           </div>
-          <div class="row spacer pull-right">
-            <input type="reset" role="button" id="btn_reinit" class="btn btn-default" value="Réinitialiser"/>
-            <input type="submit" role="Submit" id="btn_rechercher" class="btn btn-primary" value="Rechercher"/>
+          <div class="row">
+            <div class="radio col-md-3 col-sm-3">
+              <label>
+                <input name="type_patho" id="rJingJin" value="j" checked="" type="radio">
+                Jing Jin
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="radio col-md-3 col-sm-3">
+              <label>
+                <input name="type_patho" id="rVoiesLuo" value="l" checked="" type="radio">
+                Voies Luo
+              </label>
+            </div>
+            <div class="col-md-9 col-sm-6">
+             <div class="checkbox btn-group col-md-9 col-sm-12" date-toggle="buttons" id="CbL"> 
+              <label class=".checkbox-inline" for="lv">
+                <input id="lv" role="checkbox" type="checkbox" name="vois_group" value="lv"> Vide
+              </label>
+              <label class=".checkbox-inline" for="lp">
+                <input id="lp" role="checkbox" type="checkbox" name="vois_group" value="lp"> Plein
+              </label>
+            </div>
           </div>
         </div>
-      </form>
-
-    </div>
-  </div>
-</div>
-<div class="row largespacer">
+        <div class="row">
+          <div class="radio col-md-3 col-sm-3">
+            <label>
+              <input name="type_patho" id="rMerveilleuxVaisseaux" value="mv" checked="" type="radio">
+              Merveilleux vaisseaux
+            </label>
+          </div>
+        </div>
       </div>
+
+    </div> <!-- from-group -->
+
+
+
+
+
+    <div class="row spacer pull-right">
+      <input type="reset" role="button" id="btn_reinit" class="btn btn-default" value="Réinitialiser"/>
+      <input type="submit" role="Submit" id="btn_rechercher" class="btn btn-primary" value="Rechercher"/>
+    </div>            
+  </div> <!--form-group-->
+</form>
+</div>
+</div>
+</div>
+
+
+<div class="row largespacer">
+</div>
 <div id="resulat" class="table-responsive">
   <table class="table table-striped table-sortable">
     <thead>
@@ -114,5 +162,7 @@
 <script type="text/javascript" src="/static/js/jquery.min.js"></script>
 <script type="text/javascript" src="/static/js/moment.min.js"></script>
 <script type="text/javascript" src="/static/js/bootstrap-sortable.js"></script>
+
+<script type="text/javascript" src="/static/js/ShowHideCaract.js"></script>
 
 {/block}
