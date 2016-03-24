@@ -7,11 +7,12 @@
 	} catch (Exception $e) {
 		die('Erreur : '.$e->getMessage());
 	}
+	include(_PATH_.'config.php');
 	/* Récupération des données depuis le formulaire d'inscription */
 	$email = $_POST['mail'];
 	$mdp = $_POST['mdp'];
-	$nom = $_POST['name'];
-	$prenom = $_POST['lastname'];
+	$nom = $_POST['lastname'];
+	$prenom = $_POST['name'];
 	
 
 	/* On teste l'existence de l'adresse mail dans la base de données */
@@ -24,7 +25,10 @@
     	echo 'Cette adresse mail existe déjà';
 	} 
 	else {
-	    $query = 'INSERT INTO membre(nom, prenom, email, mdp) VALUES("'.$nom.'", "'.$prenom.'", "'.$email.'", "'.$mdp.'")';
+	    $hashed_password = password_hash($mdp, PASSWORD_BCRYPT, array(
+	        'salt' => $salt, 
+	    ));
+	    $query = 'INSERT INTO membre(nom, prenom, email, mdp) VALUES("'.$nom.'", "'.$prenom.'", "'.$email.'", "'.$hashed_password.'")';
 		$req = $connexion->exec($query);
 
 		//echo $query;

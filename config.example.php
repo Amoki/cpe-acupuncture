@@ -10,4 +10,6 @@
 
 	$mysql_string = "mysql:host=$mysql_url;dbname=$mysql_database;port=$mysql_port";
 	
+	$salt = "1)yBDBgD47z#wTEN^BgNXL%uFriem&LRfspU2iL0";
+	
 ?>

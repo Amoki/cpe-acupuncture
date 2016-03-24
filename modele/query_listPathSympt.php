@@ -1,7 +1,7 @@
 <?php
 function listPathSympt()
 {
-	include(_PATH_."/modele/connectBD.php");
+	global $bdd;
 	/* Requête SELECT */
 	$rawquery = 'SELECT (p.desc) as patho, (s.desc) as sympt
 						FROM symptome s
@@ -10,7 +10,7 @@ function listPathSympt()
 						ORDER BY p.desc' ;
 
 	//echo $rawquery;
-	$query = $connexion ->prepare($rawquery);
+	$query = $bdd ->prepare($rawquery);
 	
 
 	$query->execute();
