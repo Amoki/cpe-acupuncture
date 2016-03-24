@@ -1,6 +1,6 @@
 <?php
     // Initialisation de l'environnement
-    include('./config_init.php');
+    include('init.php');
 
     // Gestion de Routing
     if (isset($_GET['action']) && file_exists(_CTRL_.str_replace('.', '', $_GET['action']).'.php'))
