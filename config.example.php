@@ -9,5 +9,7 @@
 
 	$mysql_string = "mysql:host=$mysql_url;dbname=$mysql_database";
 	
+	$salt = "1)yBDBgD47z#wTEN^BgNXL%uFriem&LRfspU2iL0";
+	
 ?>
 
