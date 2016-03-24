@@ -24,6 +24,7 @@
     	echo 'Cette adresse mail existe déjà';
 	} 
 	else {
+	    $hashed_password = password_hash($mdp, PASSWORD_BCRYPT);
 	    $query = 'INSERT INTO membre(nom, prenom, email, mdp) VALUES("'.$nom.'", "'.$prenom.'", "'.$email.'", "'.$mdp.'")';
 		$req = $connexion->exec($query);
 
