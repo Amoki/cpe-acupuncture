@@ -1,35 +1,28 @@
 $(function(){
-   //  $("#CbM").hide();
-   //  $("#CbTf").hide();
-   //  $("#CbL").hide();
-   //  $('#type_patho').change(function(){
-   //      if($('#type_patho').val() == 'm') {
-   //          $("#caract").show();
-			// $("#CbM").show();
-   //      } 
-   //      if($('#type_patho').val() == 'tf') {
-   //          $("#caract").show();
-			// $("#CbTf").show();
-   //      }
-   //      if($('#type_patho').val() == 'l') {
-   //          $("#caract").show();
-			// $("#CbL").show();
-   //      }
-   //  });
-$("#CbM").attr('disabled',true);
-$("#Cbtf").attr('disabled',true);
-$("#CbL").attr('disabled',true);
 
-   switch ($('#type_patho').val()) {
-            case "m":
-                $("#CbM").attr('disabled',false);
-                break;
-            case "tf":
-            	$("#Cbtf").attr('disabled',false);
-                break;
-            case "l":
-                $("#CbL").attr('disabled',false);
-                break;
-        } 
-});
+  $("#CbM").hide();
+  $("#CbTf").hide();
+  $("#CbL").hide();
+
+
+  $(".rbTypePatho").click(function () {
+    switch ($(this).val()) {
+     case "m":
+     $("#CbM").show();
+     $("#CbL").hide();
+     $("#CbTf").hide();
+     break;
+     case "tf":
+     $("#CbTf").show();
+     $("#CbM").hide();
+     $("#CbL").hide();
+     break;
+     case "l":
+     $("#CbL").show();
+     $("#CbM").hide();
+     $("#CbTf").hide();
+     break;
+   }
+ });
+
 });
