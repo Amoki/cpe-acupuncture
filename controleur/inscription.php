@@ -10,8 +10,8 @@
 	/* Récupération des données depuis le formulaire d'inscription */
 	$email = $_POST['mail'];
 	$mdp = $_POST['mdp'];
-	$nom = $_POST['name'];
-	$prenom = $_POST['lastname'];
+	$nom = $_POST['lastname'];
+	$prenom = $_POST['name'];
 	
 
 	/* On teste l'existence de l'adresse mail dans la base de données */

@@ -24,6 +24,7 @@
 	}
 	else
 	{
+		$_SESSION['id'] = $resultat['id'];
 	    $_SESSION['nom'] = $resultat['nom'];
 	    $_SESSION['prenom'] = $resultat['prenom'];
 	}
