@@ -1,7 +1,9 @@
 {extends file="template/base.html"}
 {block name=title}Acupuncture et médecine chinoise - Accueil{/block}
 {block name=content}
+
 <div class="col-md-8 col-sm-12"> <!-- Formulaires -->
+  {if $fail} <div class="alert alert-danger">{$fail}</div> {/if}
   <div class="jumbotron text-center">
     <!-- <h2 role="heading" aria-level=2>Créer un compte</h2> -->
     <legend role="heading" aria-level=2>Créer un compte</legend>
