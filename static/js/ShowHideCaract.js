@@ -22,6 +22,10 @@ $(function(){
      $("#CbM").hide();
      $("#CbTf").hide();
      break;
+     default :
+     $("#CbM").hide();
+     $("#CbTf").hide();
+     $("#CbL").hide();
    }
  });
 
