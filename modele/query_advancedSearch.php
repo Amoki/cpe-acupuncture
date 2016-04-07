@@ -34,9 +34,13 @@ function advancedSearch($meridien,$pathoType,$caract,$sympt,$motsCles)
 	/*****************************************************/
 	//PATHOLOGIE TYPE
 	if(checkVal($val)){
-		$rawquery.=' AND ';
 		if($pathoType!="default") {
-			$rawquery.='p.type LIKE "'.$pathoType.'%"';
+			$rawquery.=' p.type LIKE "'.$pathoType.'%"';
+		}
+	}
+	else{
+		if($pathoType!="default") {
+			$rawquery.=' AND p.type LIKE "'.$pathoType.'%"';
 		}
 	}
 	//cas particulier "m"
@@ -47,10 +51,17 @@ function advancedSearch($meridien,$pathoType,$caract,$sympt,$motsCles)
 	/*****************************************************/
 	//CARACTERISTIQUE(S)
 	if(checkVal($val)){
-		$rawquery.=' AND ';
 		if($caract!="default") {
 			foreach ($caract as $value) {
 				$rawquery.='p.type ="'.$value.'"';
+			}
+		}
+
+	}
+	else{
+		if($caract!="default") {
+			foreach ($caract as $value) {
+				$rawquery.=' AND p.type ="'.$value.'"';
 			}
 		}
 	}
@@ -58,10 +69,17 @@ function advancedSearch($meridien,$pathoType,$caract,$sympt,$motsCles)
 	/*****************************************************/
 	//SYMPTOME(S)
 	if(checkVal($val)){
-		$rawquery.=' AND ';
+		
 		if($sympt!="default") {
 			foreach ($sympt as $value) {
 				$rawquery.='s.desc LIKE "%'.$value.'%"';
+			}
+		}
+	}
+	else{
+		if($sympt!="default") {
+			foreach ($sympt as $value) {
+				$rawquery.=' AND s.desc LIKE "%'.$value.'%"';
 			}
 		}
 	}
@@ -69,10 +87,16 @@ function advancedSearch($meridien,$pathoType,$caract,$sympt,$motsCles)
 	/*****************************************************/
 	//MOT(S) CLE(S)
 	if(checkVal($val)){
-		$rawquery.=' AND ';
 		if($motsCles!="default") {
 			foreach ($motsCles as $value) {
 				$rawquery.='k.name LIKE "%'.$value.'%"';
+			}
+		}	
+	}
+	else{
+		if($motsCles!="default") {
+			foreach ($motsCles as $value) {
+				$rawquery.=' AND k.name LIKE "%'.$value.'%"';
 			}
 		}	
 	}
@@ -107,7 +131,7 @@ function checkVal($val){
 	}
 }
 
-$caract = array();
+/*$caract = array();
 $caract = ["v","p"];
 
 $sympt = array();
@@ -115,6 +139,6 @@ $sympt = ["toux"];
 
 $motsCles = array();
 $motsCles = ["orteil"];
-
+*/
 advancedSearch("Du Mai","mv",$caract,$sympt,$motsCles);
 ?>
