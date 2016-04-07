@@ -1,6 +1,7 @@
 {extends file="template/base.html"}
 {block name=title}Acupuncture et médecine chinoise - Recherche avancée{/block}
 {block name=content}
+{if $logged}
 <div class="col-sm-12 col-md-12">
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -17,7 +18,7 @@
               <div class="col-md-6 col-sm-12">
                 <label for="meridien">Méridien&nbsp;:</label>
                 <select class="form-control" role="listbox" multiple>
-                {foreach form=$liste_merid item=merid}
+                {foreach from=$liste_merid item=merid}
                   <option value="{$merid.code}">{$merid.nom}</option>
                 {/foreach}
                 </select>
@@ -167,5 +168,7 @@
 <script type="text/javascript" src="static/js/bootstrap-sortable.js"></script>
 
 <script type="text/javascript" src="static/js/ShowHideCaract.js"></script>
-
+{else}
+  <p>Veuillez vous connecter ! </p>
+{/if}
 {/block}

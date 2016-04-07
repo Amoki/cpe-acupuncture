@@ -19,7 +19,7 @@
 
 	if (!$resultat)
 	{
-	    echo 'Mauvais identifiant ou mot de passe !';
+		
 	}
 	else
 	{
