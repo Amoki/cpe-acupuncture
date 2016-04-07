@@ -1,16 +1,14 @@
 <?php
-include("connectBD.php");
 
 function advancedSearch($meridien,$pathoType,$caract,$sympt,$motsCles)
 {
+	global $bdd;
 	//$meridien = "Du Mai"
 	//$pathoType = "mv";
 	//$caract = ["p","v"];
 	//$sympt = ["2ème orteil",.....]
 	//$motsCles = ["....","...."];
 
-	$connexion=connectBD();
-	
 	/*****************************************************/
 	//MERIDIEN
 
@@ -25,14 +23,14 @@ function advancedSearch($meridien,$pathoType,$caract,$sympt,$motsCles)
 					WHERE ';
 
 
-	if ($meridien!="default") {
+	if ($meridien!="") {
 	$rawquery.= 'm.nom ="'.$meridien.'"';
 	}
 
 	/*****************************************************/
 	//PATHOLOGIE TYPE
 
-	if($pathoType!="default") {
+	if($pathoType!="") {
 	$rawquery.='AND p.type LIKE "'.$pathoType.'%"';
 	}
 
@@ -69,11 +67,10 @@ function advancedSearch($meridien,$pathoType,$caract,$sympt,$motsCles)
 	/*****************************************************/
 	//RUN QUERY
 
-	echo $rawquery;
-	$query = $connexion ->prepare($rawquery);
+	$query = $bdd ->prepare($rawquery);
 	
 	$query->execute();
-
+	var_dump($rawquery);
 	$liste_patho = array();
 
 	$i = 0;
@@ -82,20 +79,19 @@ function advancedSearch($meridien,$pathoType,$caract,$sympt,$motsCles)
 		$i++;
 	}
 	
-	var_dump($liste_patho);
 
 	return $liste_patho;
 }
 
 
-	$caract = array();
-	$caract = ["v","p"];
+// 	$caract = array();
+// 	$caract = ["v","p"];
 
-	$sympt = array();
-	$sympt = ["toux"];
+// 	$sympt = array();
+// 	$sympt = ["toux"];
 
-	$motsCles = array();
-	$motsCles = ["orteil"];
+// 	$motsCles = array();
+// 	$motsCles = ["orteil"];
 
-advancedSearch("Du Mai","mv",$caract,$sympt,$motsCles);
+// advancedSearch("Du Mai","mv",$caract,$sympt,$motsCles);
 ?>

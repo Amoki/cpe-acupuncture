@@ -10,14 +10,14 @@
     <div class="panel-body">
 
       <div id="recherche">
-        <form id="search" action="index.php" method="post">
+        <form id="search" action="index.php?action=recherche-avancee&page=recherche-avancee" method="post">
           <div class="form-group">
 
 
             <div class="row">
               <div class="col-md-6 col-sm-12">
                 <label for="meridien">Méridien&nbsp;:</label>
-                <select class="form-control" role="listbox" multiple>
+                <select id="meridien" class="form-control" role="listbox" name="meridien" multiple>
                 {foreach from=$liste_merid item=merid}
                   <option value="{$merid.code}">{$merid.nom}</option>
                 {/foreach}
@@ -26,14 +26,14 @@
               </div>
               <div class="col-md-6 col-sm-12">
                 <label for="mot_patho">Mots clés pathologies&nbsp;:</label>
-                <input type="text" id="mot_patho" class="form-control" placeholder="Pathologie">
+                <input type="text" id="mot_patho" class="form-control" name="mot_patho" placeholder="Pathologie">
               </div>
             </div> <!-- end row -->
 
             <div class="row littlespacer">
               <div class="col-md-6 col-sm-12">
                 <label for="symptomes">Symptômes&nbsp;:</label>
-                <input type="text" id="symptomes" class="form-control" placeholder="Symptômes">
+                <input type="text" id="symptomes" class="form-control" name="symptomes" placeholder="Symptômes">
               </div>
             </div><!-- end row -->
 
@@ -56,10 +56,10 @@
                 </div>
                 <div class="col-md-9 col-sm-9 checkbox" id="CbM">
                   <label class=".checkbox-inline" for="mi">
-                    <input id="mi" role="checkbox" type="checkbox" name="meridien_group" value="mi"> Interne
+                    <input id="mi" role="checkbox" type="checkbox" name="cbCaract[]" value="mi"> Interne
                   </label>
                   <label class=".checkbox-inline" for="me">
-                    <input id="me" role="checkbox" type="checkbox" name="meridien_group" value="me"> Externe
+                    <input id="me" role="checkbox" type="checkbox" name="cbCaract[]" value="me"> Externe
                   </label>
                 </div>
               </div> <!-- end row -->
@@ -73,16 +73,16 @@
                 </div>
                 <div class="col-md-9 col-sm-9 checkbox" id="CbTf">
                   <label class=".checkbox-inline" for="tfp">
-                    <input id="tfp" role="checkbox" type="checkbox" name="tsang_group" value="tfp"> Plein
+                    <input id="tfp" role="checkbox" type="checkbox" name="cbCaract[]" value="tfp"> Plein
                   </label>
                   <label class=".checkbox-inline" for="tfv">
-                    <input id="tfv" role="checkbox" type="checkbox" name="tsang_group" value="tfv"> Vide
+                    <input id="tfv" role="checkbox" type="checkbox" name="cbCaract[]" value="tfv"> Vide
                   </label>
                   <label class=".checkbox-inline" for="yfc">
-                    <input id="tfc" role="checkbox" type="checkbox" name="tsang_group" value="tfc"> Chaud
+                    <input id="tfc" role="checkbox" type="checkbox" name="cbCaract[]" value="tfc"> Chaud
                   </label>
                   <label class=".checkbox-inline" for="tff">
-                    <input id="tff" role="checkbox" type="checkbox" name="tsang_group" value="tff"> Froid
+                    <input id="tff" role="checkbox" type="checkbox" name="cbCaract[]" value="tff"> Froid
                   </label>
                 </div>
               </div> <!-- end row -->
@@ -105,10 +105,10 @@
                 </div>
                 <div class="checkbox col-md-9 col-sm-12" date-toggle="buttons" id="CbL">
                   <label class=".checkbox-inline" for="lv">
-                    <input id="lv" role="checkbox" type="checkbox" name="vois_group" value="lv"> Vide
+                    <input id="lv" role="checkbox" type="checkbox" name="cbCaract[]" value="lv"> Vide
                   </label>
                   <label class=".checkbox-inline" for="lp">
-                    <input id="lp" role="checkbox" type="checkbox" name="vois_group" value="lp"> Plein
+                    <input id="lp" role="checkbox" type="checkbox" name="cbCaract[]" value="lp"> Plein
                   </label>
                 </div>
               </div><!-- end row -->
