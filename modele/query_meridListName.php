@@ -1,11 +1,9 @@
 <?php
-include("connectBD.php");
 
 function meridListName()
 {
+	global $bdd;
 
-	$connexion=connectBD();
-	
 	/* Requête SELECT */
 	$rawquery = 'SELECT nom
 					FROM meridien
@@ -13,8 +11,8 @@ function meridListName()
 
 	//echo $rawquery;
 
-	$query = $connexion ->prepare($rawquery);
-	
+	$query = $bdd->prepare($rawquery);
+
 	$query->execute();
 
 	$liste_meridien = array();
@@ -23,12 +21,11 @@ function meridListName()
 	$i = 0;
 	while($donnees = $query->fetch()){
 		$liste_meridien[$i]['nom'] = $donnees['nom'];
+		$liste_meridien[$i]['code'] = $donnees['code'];
 		$i++;
 	}
 	//var_dump($liste_meridien);
 
 	return $liste_meridien;
 }
-
-meridListName();
 ?>

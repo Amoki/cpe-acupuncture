@@ -16,7 +16,11 @@
             <div class="row">
               <div class="col-md-6 col-sm-12">
                 <label for="meridien">Méridien&nbsp;:</label>
-                <select class="form-control" role="listbox" multiple></select>
+                <select class="form-control" role="listbox" multiple>
+                {foreach form=$liste_merid item=merid}
+                  <option value="{$merid.code}">{$merid.nom}</option>
+                {/foreach}
+                </select>
 
               </div>
               <div class="col-md-6 col-sm-12">
@@ -66,7 +70,7 @@
                     Tsang Fu
                   </label>
                 </div>
-                <div class="col-md-9 col-sm-9 checkbox" id="CbTf"> 
+                <div class="col-md-9 col-sm-9 checkbox" id="CbTf">
                   <label class=".checkbox-inline" for="tfp">
                     <input id="tfp" role="checkbox" type="checkbox" name="tsang_group" value="tfp"> Plein
                   </label>
@@ -98,7 +102,7 @@
                     Voies Luo
                   </label>
                 </div>
-                <div class="checkbox col-md-9 col-sm-12" date-toggle="buttons" id="CbL"> 
+                <div class="checkbox col-md-9 col-sm-12" date-toggle="buttons" id="CbL">
                   <label class=".checkbox-inline" for="lv">
                     <input id="lv" role="checkbox" type="checkbox" name="vois_group" value="lv"> Vide
                   </label>

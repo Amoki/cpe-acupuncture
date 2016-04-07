@@ -10,8 +10,8 @@ function listPathSympt()
 						ORDER BY p.desc' ;
 
 	//echo $rawquery;
-	$query = $bdd ->prepare($rawquery);
-	
+	$query = $bdd->prepare($rawquery);
+
 
 	$query->execute();
 
@@ -27,7 +27,7 @@ function listPathSympt()
 		}
 		array_push($liste_patho[$donnees['patho']], $donnees['sympt']);
 	}
-	
+
 	//var_dump($liste_patho);
 
 	return $liste_patho;
