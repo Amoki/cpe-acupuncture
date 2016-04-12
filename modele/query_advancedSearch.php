@@ -33,7 +33,7 @@ function advancedSearch($meridien,$pathoType,$caract,$sympt,$motsCles)
 
 	/*****************************************************/
 	//PATHOLOGIE TYPE
-	if(checkVal($val)){
+	if(!checkVal($val)){
 		if($pathoType!="default") {
 			$rawquery.=' p.type LIKE "'.$pathoType.'%"';
 		}
@@ -50,7 +50,7 @@ function advancedSearch($meridien,$pathoType,$caract,$sympt,$motsCles)
 	
 	/*****************************************************/
 	//CARACTERISTIQUE(S)
-	if(checkVal($val)){
+	if(!checkVal($val)){
 		if($caract!="default") {
 			foreach ($caract as $value) {
 				$rawquery.='p.type ="'.$value.'"';
@@ -68,8 +68,7 @@ function advancedSearch($meridien,$pathoType,$caract,$sympt,$motsCles)
 
 	/*****************************************************/
 	//SYMPTOME(S)
-	if(checkVal($val)){
-		
+	if(!checkVal($val)){
 		if($sympt!="default") {
 			foreach ($sympt as $value) {
 				$rawquery.='s.desc LIKE "%'.$value.'%"';
@@ -86,7 +85,7 @@ function advancedSearch($meridien,$pathoType,$caract,$sympt,$motsCles)
 
 	/*****************************************************/
 	//MOT(S) CLE(S)
-	if(checkVal($val)){
+	if(!checkVal($val)){
 		if($motsCles!="default") {
 			foreach ($motsCles as $value) {
 				$rawquery.='k.name LIKE "%'.$value.'%"';
