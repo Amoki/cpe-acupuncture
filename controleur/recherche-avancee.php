@@ -2,23 +2,23 @@
 	include(_PATH_.'/modele/query_advancedSearch.php');
 	// var_dump($_POST);
 
-	if (!isset($_POST["meridien"]) ¦¦ $_POST["meridien"]=="")
+	if (!isset($_POST["meridien"]) || $_POST["meridien"]=="")
 	{
 		$_POST["meridien"] = "default";
 	}
-	if (!isset($_POST["type_patho"]) ¦¦ $_POST["type_patho"]=="")
+	if (!isset($_POST["type_patho"]) || $_POST["type_patho"]=="")
 	{
 		$_POST["type_patho"] = "default";
 	}
-	if (!isset($_POST["cbCaract"]) ¦¦ $_POST["cbCaract"]=="")
+	if (!isset($_POST["cbCaract"]) || $_POST["cbCaract"]=="")
 	{
 		$_POST["cbCaract"] = "default";
 	}
-	if (!isset($_POST["mot_patho"]) ¦¦ $_POST["mot_patho"]=="")
+	if (!isset($_POST["mot_patho"]) || $_POST["mot_patho"]=="")
 	{
 		$_POST["mot_patho"] = "default";
 	}
-	if (!isset($_POST["symptomes"]) ¦¦ $_POST["symptomes"]=="")
+	if (!isset($_POST["symptomes"]) || $_POST["symptomes"]=="")
 	{
 		$_POST["symptomes"] = "default";
 	}
