@@ -102,7 +102,7 @@ function advancedSearch($meridien,$pathoType,$caract,$sympt,$motsCles)
 	//RUN QUERY
 
 	echo $rawquery;
-	$query = $connexion ->prepare($rawquery);
+	$query = $bdd ->prepare($rawquery);
 	
 	$query->execute();
 
