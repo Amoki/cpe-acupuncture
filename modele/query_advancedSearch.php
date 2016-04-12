@@ -1,6 +1,4 @@
 <?php
-include("connectBD.php");
-
 function advancedSearch($meridien,$pathoType,$caract,$sympt,$motsCles)
 {
 	//$meridien = "Du Mai"
