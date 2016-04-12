@@ -137,5 +137,5 @@ $sympt = ["toux"];
 $motsCles = array();
 $motsCles = ["orteil"];
 */
-advancedSearch("Du Mai","mv",$caract,$sympt,$motsCles);
+//advancedSearch("Du Mai","mv",$caract,$sympt,$motsCles);
 ?>
