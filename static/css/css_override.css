@@ -9,3 +9,11 @@
 .littlespacer {  
 	margin-top: 2%; 
 	}	
+
+.sMerdien
+{
+	height: 5em;
+	max-height: 5em;
+    overflow: auto;
+    width: auto;
+}
