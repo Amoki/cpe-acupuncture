@@ -20,7 +20,7 @@
                 <div class="sMeridien checkbox">
                  {foreach from=$liste_merid item=merid}
                     <label class=".checkbox-inline" for="{$merid.code}">
-                      <input id="{$merid.code}" role="checkbox" type="checkbox" name="{$merid.code}" value="{$merid.code}"> {$merid.nom} &nbsp;
+                      <input id="{$merid.code}" role="checkbox" type="checkbox" name="meridien[]" value="{$merid.code}"> {$merid.nom} &nbsp;
                     </label>
                     {/foreach}
                 </div>

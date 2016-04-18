@@ -23,8 +23,12 @@
 		$_POST["symptomes"] = "default";
 	}
 
+	echo $_POST["meridien"];
+	echo $_POST["type_patho"];
+	echo $_POST["cbCaract"];
+	echo $_POST["symptomes"];
+	$liste_patho = advancedSearch($_POST["meridien"],$_POST["type_patho"],$_POST["cbCaract"], $_POST["symptomes"], $_POST["mot_patho"]);
 
-	$liste_patho = advancedSearch($_POST["meridien"],$_POST["type_patho"],$_POST["cbCaract"],$_POST["mot_patho"],$_POST["symptomes"]);
 
 	$smarty->assign("liste_patho" , $liste_patho);
 ?>
