@@ -8,8 +8,8 @@
 
   <!-- BOOTSTRAP CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link href="static/css/bootstrap-Readable.css" rel="stylesheet">
-  <link href="static/css/css_override.css" rel="stylesheet">
+  <link href="/static/css/bootstrap-Readable.css" rel="stylesheet">
+  <link href="/static/css/css_override.css" rel="stylesheet">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,17 +37,17 @@
 
             <div aria-expanded="false" class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                <li> <a role="link" href="index.php?page=index" accesskey="1" title="Accueil">Accueil</a></li>
-                <li><a role="link" href="index.php?page=consultation" accesskey="5" title="Consultation des pathologies">Consultation </a></li>
-                <li><a role="link" href="index.php?page=recherche-avancee" accesskey="4" title="Recherche avancée de pathologies">Recherche avancée </a></li>
-                <li><a role="link" href="index.php?page=informations" accesskey="9" title="Informations">Informations</a></li> 
+                <li> <a role="link" href="/" accesskey="1" title="Accueil">Accueil</a></li>
+                <li><a role="link" href="/consultation" accesskey="5" title="Consultation des pathologies">Consultation </a></li>
+                <li><a role="link" href="/recherche-avancee" accesskey="4" title="Recherche avancée de pathologies">Recherche avancée </a></li>
+                <li><a role="link" href="/informations" accesskey="9" title="Informations">Informations</a></li> 
               </ul>
               <ul class="nav navbar-nav navbar-right">
                 {if $logged}
-                <a role="link" id="account" href="index.php?page=account">{$username}</a><br/>
-                <a role="link" accesskey="q" id="disconnect" href="index.php?action=deconnexion"><img id="disconnect_img"/>deconnexion</a>
+                <a role="link" id="account" href="/account">{$username}</a><br/>
+                <a role="link" accesskey="q" id="disconnect" href="/index/deconnexion"><img id="disconnect_img"/>deconnexion</a>
                 {else}
-                <a role="link" href="index.php">s'inscrire / se connecter</a>
+                <a role="link" href="/">s'inscrire / se connecter</a>
                 {/if}
               </ul>
             </div>
