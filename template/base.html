@@ -43,8 +43,7 @@
                 <li><a role="link" href="index.php?page=informations" accesskey="9" title="Informations">Informations</a></li> 
               </ul>
               <ul class="nav navbar-nav navbar-right">
-                {if $logged }
-                <img id="avatar" src=""/>
+                {if $logged}
                 <a role="link" id="account" href="index.php?page=account">{$username}</a><br/>
                 <a role="link" accesskey="q" id="disconnect" href="index.php?action=deconnexion"><img id="disconnect_img"/>deconnexion</a>
                 {else}
@@ -55,20 +54,11 @@
           </div>
         </nav>
       </div>
-
     </div><!-- /.container-fluid -->
-
-
-
-
     <div class="row"> <!-- "body" -->
-
       {block name=content}contenu de la page{/block}
-
     </div> <!-- fin body -->
-
   </div> <!--Fin container-->
-
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <!-- BOOTSTRAP JS -->

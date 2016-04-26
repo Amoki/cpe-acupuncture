@@ -1,9 +1,8 @@
 {extends file="template/base.html"}
 {block name=title}Acupuncture et médecine chinoise - Accueil{/block}
 {block name=content}
-
 <div class="col-md-8 col-sm-12"> <!-- Formulaires -->
-  {if $fail} <div class="alert alert-danger">{$fail}</div> {/if}
+  {if isset($fail)}<div class="alert alert-danger">{$fail}</div>{/if}
   <div class="jumbotron text-center">
     <!-- <h2 role="heading" aria-level=2>Créer un compte</h2> -->
     <legend role="heading" aria-level=2>Créer un compte</legend>
@@ -46,34 +45,35 @@
               <input role="Submit" type="submit" id="create_account" class="btn btn-primary" value="Créer un compte"/>
             </div>
           </div>
-        </fieldset>
-      </form>
-      <div class="row largespacer">
-      </div>
-      <!-- <h2 role="heading" aria-level=2 >S'identifer</h2> -->
-      <legend role="heading" aria-level=2>S'identifer</legend>
-      <form id="form_identify" role="form" action="index.php?action=connexion&page=account" method="post" class="form-horizontal">
-        <fieldset>
-          <div class="form-group">
+        </div>
+      </fieldset>
+    </form>
+    <div class="row largespacer">
+    </div>
+    <!-- <h2 role="heading" aria-level=2 >S'identifer</h2> -->
+    <legend role="heading" aria-level=2>S'identifer</legend>
+    <form id="form_identify" role="form" action="index.php?action=connexion&page=account" method="post" class="form-horizontal">
+      <fieldset>
+        <div class="form-group">
+          <div class="row">
             <div class="row">
-              <div class="row">
-                <div class="col-md-6 col-sm-12">
-                  <label for="e-mail_loggin">E-mail&nbsp;:</label>
-                  <input type="email" role="textbox" id="e-mail_loggin" class="form-control" name="email" placeholder="E-mail" required aria-required="true">
-                </div>
-                <div class="col-md-6 col-sm-12">
-                  <label for="psw_loggin">Mot de passe&nbsp;:</label>
-                  <input type="password" role="textbox" id="psw_loggin" class="form-control" name="mdp" placeholder="Mot de passe" required aria-required="true">
-                </div>
-                
+              <div class="col-md-6 col-sm-12">
+                <label for="e-mail_loggin">E-mail&nbsp;:</label>
+                <input type="email" role="textbox" id="e-mail_loggin" class="form-control" name="email" placeholder="E-mail" required aria-required="true">
               </div>
-              <div class="row spacer">
-                  <input role="Submit" type="submit" id="identify" class="btn btn-primary" value="S'identifier"/>
-                </div>
+              <div class="col-md-6 col-sm-12">
+                <label for="psw_loggin">Mot de passe&nbsp;:</label>
+                <input type="password" role="textbox" id="psw_loggin" class="form-control" name="mdp" placeholder="Mot de passe" required aria-required="true">
+              </div>
             </div>
-          </fieldset>
-        </form>
-      </div>
-    </div> <!-- Fin formulaires -->
-    {include file=$rss_path}
-    {/block}
+            <div class="row spacer">
+              <input role="Submit" type="submit" id="identify" class="btn btn-primary" value="S'identifier"/>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div> <!-- Fin formulaires -->
+{include file=$rss_path}
+{/block}

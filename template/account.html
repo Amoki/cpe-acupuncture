@@ -7,7 +7,6 @@
     <form id="form_create_account" role="form" action="index.php" method="post">
       <div class="form-group">
         <div class="row">
-
           <div class="row"> 
             <div class="col-md-6 col-sm-12">
               <label for="lastname">Nom&nbsp;:</label>
@@ -23,35 +22,17 @@
               <label for="e-mail">E-mail&nbsp;:</label>
               <input type="email" value="{$email}" role="textbox" id="e-mail" class="form-control" name="mail" placeholder="E-mail" required aria-required="true">
             </div>
-
             <div class="col-md-6 col-sm-12">
               <label for="password">Mot de passe&nbsp;:</label>
               <input type="password" role="textbox" id="password" class="form-control" name="mdp" placeholder="Mot de passe" required aria-required="true">
-            </div> 
-
-          </div>
-          <div class="row">
-            <label>Avatar</label>
-            <div class="avatar-container">
-             <div class="placeholder avatar-80"><img src="" id="jsid-profile-avatar" width="80"></div>
-            </div>
-            <div class="control">
-              <input name="avatar" accept=".jpg, .gif, .png" type="file">
-              <!-- <p class="tips">JPG, GIF or PNG, Max size: 2MB</p> -->
-              <input name="default_avatar" type="hidden">
             </div> 
           </div>
           <div class="row">
             <input role="Submit" type="submit" id="modify_account" class="btn btn-default" value="Modifier mon compte"/>
           </div>
         </div>
-      </form>
-
-    </div>
-  </div> <!-- Fin formulaires -->
-
-  <div class="col-md-4 col-sm-12"> <!-- Flux RSS -->
-
+      </div>
+    </form>
   </div>
-
-  {/block}
+</div> <!-- Fin formulaires -->
+{/block}

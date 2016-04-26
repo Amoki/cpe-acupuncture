@@ -1270,7 +1270,6 @@ CREATE TABLE IF NOT EXISTS `membre` (
   `nom` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `prenom` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `mdp` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `avatar` blob,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 

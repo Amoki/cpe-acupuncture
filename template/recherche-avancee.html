@@ -3,12 +3,12 @@
 {block name=content}
 
 <div class="col-sm-12 col-md-12">
+{if $logged}
   <div class="panel panel-default">
     <div class="panel-heading">
       <h1 role="heading" aria-level=1 >Recherche avancée de pathologies</h1>
     </div>
     <div class="panel-body">
-
       <div id="recherche">
         <form id="search" action="index.php?action=recherche-avancee&page=recherche-avancee" method="post">
           <div class="form-group">
@@ -190,5 +190,7 @@
 <script type="text/javascript" src="static/js/bootstrap-sortable.js"></script>
 
 <script type="text/javascript" src="static/js/ShowHideCaract.js"></script>
-
+{else}
+  <p>Veuillez vous connecter !</p>
+{/if}
 {/block}
