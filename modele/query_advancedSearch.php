@@ -15,89 +15,67 @@ function advancedSearch($meridien,$pathoType,$caract,$sympt,$motsCles)
 	/* Requête SELECT */
 	$rawquery = 'SELECT p.desc
 	FROM patho p
-	JOIN meridien m ON m.code=p.mer
-	JOIN symptpatho sp ON p.idP=sp.idP
-	JOIN symptome s ON sp.idS=s.idS
-	JOIN keysympt ks ON s.idS=ks.idS
-	JOIN keywords k ON ks.idK=k.idk
+	INNER JOIN meridien m ON m.code=p.mer
+	INNER JOIN symptpatho sp ON p.idP=sp.idP
+	INNER JOIN symptome s ON sp.idS=s.idS
+	INNER JOIN keysympt ks ON s.idS=ks.idS
+	INNER JOIN keywords k ON ks.idK=k.idk
 	WHERE ';
 
-	$val = 0;
+	//Si 0 ne pas mettre AND 
+	$andVal=0;
 
+/*************************************************************************/
 	if ($meridien!="default") {
-		$rawquery.= 'm.nom ="'.$meridien.'"';
-		$val = 1;
+		foreach ($meridien as $merid) {
+			if (!$andVal) {
+				$rawquery.= 'm.code ="'.$merid.'"';
+				$andVal=1;
+			}
+			else
+			{
+				$rawquery.= ' OR m.code ="'.$merid.'"';
+			}
+		}
 	}
 
-	/*****************************************************/
-	//PATHOLOGIE TYPE
-	if(!checkVal($val)){
+/*************************************************************************/
+	if(!$andVal){
 		if($pathoType!="default") {
 			$rawquery.=' p.type LIKE "'.$pathoType.'%"';
+			$andVal=1;
 		}
 	}
-	else{
-		if($pathoType!="default") {
-			$rawquery.=' AND p.type LIKE "'.$pathoType.'%"';
-		}
+	elseif($pathoType!="default") {
+		$rawquery.=' AND p.type LIKE "'.$pathoType.'%"';
 	}
+
 	//cas particulier "m"
 	if($pathoType=="m"){
 		$rawquery.=' AND p.type NOT LIKE "mv"';
 	}
+
+/*************************************************************************/
+	if(!$andVal){
+		if($caract!="default") {
+			$n = count($caract);
+			echo $n;
+			foreach ($caract as $value) {
+				$rawquery.=' p.type ="'.$value.'"';
+			}
+			$andVal=1;
+		}
+	}
+	elseif($caract!="default"){
+		$n = count($caract);
+		echo $n;
+		foreach ($caract as $value) {
+			$rawquery.=' AND p.type ="'.$value.'"';
+		}
+	}
+
+/*************************************************************************/
 	
-	/*****************************************************/
-	//CARACTERISTIQUE(S)
-	if(!checkVal($val)){
-		if($caract!="default") {
-			foreach ($caract as $value) {
-				$rawquery.='p.type ="'.$value.'"';
-			}
-		}
-
-	}
-	else{
-		if($caract!="default") {
-			foreach ($caract as $value) {
-				$rawquery.=' AND p.type ="'.$value.'"';
-			}
-		}
-	}
-
-	/*****************************************************/
-	//SYMPTOME(S)
-	if(!checkVal($val)){
-		if($sympt!="default") {
-			foreach ($sympt as $value) {
-				$rawquery.='s.desc LIKE "%'.$value.'%"';
-			}
-		}
-	}
-	else{
-		if($sympt!="default") {
-			foreach ($sympt as $value) {
-				$rawquery.=' AND s.desc LIKE "%'.$value.'%"';
-			}
-		}
-	}
-
-	/*****************************************************/
-	//MOT(S) CLE(S)
-	if(!checkVal($val)){
-		if($motsCles!="default") {
-			foreach ($motsCles as $value) {
-				$rawquery.='k.name LIKE "%'.$value.'%"';
-			}
-		}	
-	}
-	else{
-		if($motsCles!="default") {
-			foreach ($motsCles as $value) {
-				$rawquery.=' AND k.name LIKE "%'.$value.'%"';
-			}
-		}	
-	}
-
 	/*****************************************************/
 	//RUN QUERY
 
@@ -110,23 +88,22 @@ function advancedSearch($meridien,$pathoType,$caract,$sympt,$motsCles)
 
 	$i = 0;
 	while($donnees = $query->fetch()){
-		$liste_patho[$i]['type'] = $donnees['type'];
-		$i++;
+		$liste_patho[$i]['desc'] = $donnees['desc'];
+
+	$i++;
 	}
 	
-	var_dump($liste_patho);
-
 	return $liste_patho;
 }
 
-function checkVal($val){
+/*function checkVal($val){
 	if($val==1){
 		return 1;
 	}
 	else{
 		return 0;
 	}
-}
+}*/
 
 /*$caract = array();
 $caract = ["v","p"];
@@ -136,6 +113,6 @@ $sympt = ["toux"];
 
 $motsCles = array();
 $motsCles = ["orteil"];
-*/
-//advancedSearch("Du Mai","mv",$caract,$sympt,$motsCles);
+
+advancedSearch("Du Mai","mv",$caract,$sympt,$motsCles);*/
 ?>
