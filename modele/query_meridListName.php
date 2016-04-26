@@ -5,7 +5,7 @@ function meridListName()
 	global $bdd;
 
 	/* Requête SELECT */
-	$rawquery = 'SELECT nom
+	$rawquery = 'SELECT nom, code 
 					FROM meridien
 					ORDER BY nom';
 
