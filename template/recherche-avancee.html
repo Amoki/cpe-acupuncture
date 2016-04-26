@@ -163,7 +163,6 @@
 
   <div class="row largespacer">
   </div>
-
   <div id="resulat" class="table-responsive">
     <table class="table table-striped table-sortable">
       <thead>
@@ -172,11 +171,13 @@
         </tr>
       </thead>
       <tbody>
+      {if isset($liste_patho)}
         {foreach from=$liste_patho item=patho}
         <tr>
           <td class="sorted">{$patho.desc}</td>
         </tr>
         {/foreach}
+      {/if}
       </tbody>
     </table>
   </div>
