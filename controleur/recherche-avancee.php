@@ -1,6 +1,6 @@
 <?php
 	include(_PATH_.'/modele/query_advancedSearch.php');
-	// var_dump($_POST);
+	
 
 	if (!isset($_POST["meridien"]) || $_POST["meridien"]=="")
 	{
@@ -23,12 +23,7 @@
 		$_POST["symptomes"] = "default";
 	}
 
-	echo $_POST["meridien"];
-	echo $_POST["type_patho"];
-	echo $_POST["cbCaract"];
-	echo $_POST["symptomes"];
 	$liste_patho = advancedSearch($_POST["meridien"],$_POST["type_patho"],$_POST["cbCaract"], $_POST["symptomes"], $_POST["mot_patho"]);
-
 
 	$smarty->assign("liste_patho" , $liste_patho);
 ?>
