@@ -31,7 +31,7 @@ try {
 
 	$bdd->query("SET NAMES UTF8");
 } catch (Exception $e) {
-    echo "Problème de connexion à la base de donnée acu...";
+    echo "Problème de connexion à la base de donnée ...";
     die();
 }
 

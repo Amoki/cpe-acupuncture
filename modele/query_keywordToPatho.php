@@ -27,13 +27,7 @@ $connexion=connectBD();
 	$rawquery.=' k.name LIKE "'.$value.'"';
 	}
 
-	$rawquery.=';';
-
-	echo $rawquery;
-
-	//echo $rawquery;
 	$query = $connexion ->prepare($rawquery);
-	
 
 	$query->execute();
 	$liste_patho = array();
@@ -46,7 +40,6 @@ $connexion=connectBD();
 		$i++;
 	}
 	
-	//var_dump($liste_patho);
 
 	return $liste_patho;
 }

@@ -1,8 +1,6 @@
 <?php
 	include(_PATH_.'/modele/query_advancedSearch.php');
 	
-	var_dump($_POST);
-
 	if (!isset($_POST["meridien"]) || $_POST["meridien"]=="")
 	{
 		$_POST["meridien"] = "default";

@@ -19,7 +19,6 @@ function pathTypeOfMerid($meridien)
 					WHERE m.nom ="'.$meridien.'"';
 	}
 
-	echo $rawquery;
 
 	$query = $connexion ->prepare($rawquery);
 	
@@ -34,7 +33,6 @@ function pathTypeOfMerid($meridien)
 		$i++;
 	}
 	
-	var_dump($pathoType);
 
 	return $pathoType;
 }

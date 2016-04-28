@@ -72,7 +72,6 @@ function advancedSearch($meridien,$pathoType,$caract,$sympt,$motsCles)
 	}
 
 	/*************************************************************************/
-	var_dump($sympt);
 	$orVal=0; //0 si pas besoin OR
 	if($sympt!="default") {
 		foreach ($sympt as $s) {
@@ -94,7 +93,6 @@ function advancedSearch($meridien,$pathoType,$caract,$sympt,$motsCles)
 	}
 
 	/*************************************************************************/
-	var_dump($motsCles);
 	$orVal=0; //0 si pas besoin OR
 	if($motsCles!="default") {
 		foreach ($motsCles as $m) {
@@ -120,7 +118,6 @@ function advancedSearch($meridien,$pathoType,$caract,$sympt,$motsCles)
 	/*****************************************************/
 	//RUN QUERY
 
-	echo $rawquery;
 	$query = $bdd ->prepare($rawquery);
 	
 	$query->execute();
@@ -137,23 +134,4 @@ function advancedSearch($meridien,$pathoType,$caract,$sympt,$motsCles)
 	return $liste_patho;
 }
 
-/*function checkVal($val){
-	if($val==1){
-		return 1;
-	}
-	else{
-		return 0;
-	}
-}*/
-
-/*$caract = array();
-$caract = ["v","p"];
-
-$sympt = array();
-$sympt = ["toux"];
-
-$motsCles = array();
-$motsCles = ["orteil"];
-
-advancedSearch("Du Mai","mv",$caract,$sympt,$motsCles);*/
 ?>

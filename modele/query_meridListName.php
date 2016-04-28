@@ -24,7 +24,6 @@ function meridListName()
 		$liste_meridien[$i]['code'] = $donnees['code'];
 		$i++;
 	}
-	//var_dump($liste_meridien);
 
 	return $liste_meridien;
 }
