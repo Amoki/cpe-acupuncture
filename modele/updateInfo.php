@@ -6,15 +6,13 @@ function updateInfo($id, $mail, $password, $nom, $prenom){
 	$fill = '';
 
 	if (isset($mail)) {
-
 		$query .= " email = '$mail' ";
-
 		$fill = ',';
 
 	}
 	if (isset($password) && $password !='') {
 		$query .= $fill;
-		$query .= " password = '$password' ";
+		$query .= " mdp = '$password' ";
 		$fill = ',';
 	}
 	if (isset($nom)) {
@@ -27,10 +25,7 @@ function updateInfo($id, $mail, $password, $nom, $prenom){
 		$query .= " prenom = '$prenom' ";
 		$fill = ',';
 	}
-	if (isset($mail)) {
-		$query .= $fill;
-		$query .= " email = '$mail' ";
-	}
+
 
 	$query .= " WHERE id = $id";
 	var_dump($query);
