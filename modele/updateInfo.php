@@ -1,5 +1,6 @@
 <?php
 function updateInfo($id, $mail, $password, $nom, $prenom){
+	include(_PATH_.'config.php');
 	global $bdd;
 	$query = 'UPDATE membre SET ';
 
@@ -8,35 +9,38 @@ function updateInfo($id, $mail, $password, $nom, $prenom){
 
 	if (isset($mail)) {
 		$query .= " email = ? ";
-		array_push($param, $mail);
+		$params[] = $mail;
 		$fill = ',';
 
 	}
 	if (isset($password) && $password !='') {
+		$hashed_password = password_hash($password, PASSWORD_BCRYPT, array(
+			'salt' => $salt, 
+		));
 		$query .= $fill;
 		$query .= " mdp = ? ";
-		array_push($param, $password);
+		$params[] = $hashed_password;
 		$fill = ',';
 	}
 	if (isset($nom)) {
 		$query .= $fill;
 		$query .= " nom = ? ";
-		array_push($param, $nom);
+		$params[] = $nom;
 		$fill = ',';
 	}
 	if (isset($prenom)) {
 		$query .= $fill;
 		$query .= " prenom = ? ";
-		array_push($param, $prenom);
+		$params[] = $prenom;
 		$fill = ',';
 	}
 
 	$query .= " WHERE id = ?";
 
-	array_push($param, $id);
-
+	$params[] = $id;
+	
 	$res_query = $bdd ->prepare($query);
-	$res_query->execute($param);
+	$res_query->execute($params);
 
 	$res = $res_query->fetch();
 

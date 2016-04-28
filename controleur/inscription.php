@@ -4,7 +4,7 @@
 global $bdd;
 global $smarty;
 $smarty->assign('fail', false);
-include(_PATH_.'config.php');
+
 
 /* Récupération des données depuis le formulaire d'inscription */
 $email = $_POST['mail'];
@@ -34,19 +34,16 @@ else {
 		$_GET['page'] = 'index'; // stay on the same page
 	} 
 	else {
-		$hashed_password = password_hash($mdp, PASSWORD_BCRYPT, array(
-			'salt' => $salt, 
-			));
-		$query = 'INSERT INTO membre(nom, prenom, email, mdp) VALUES(?, ?, ?, ?)';
-		$req = $bdd ->prepare($query);
-		$req->execute(array($nom, $prenom, $email, $hashed_password));
+		require(_PATH_.'/modele/createUser.php');
 
-		if(! $req){
+		$res = createUser($nom, $prenom, $email, $mdp));
+
+		if(!$res) {
 			$smarty->assign('fail', "Une erreur inconnue est survenue, veuillez réessayer. Si le problème persiste, contactez l'administrateur");
 			$_GET['page'] = 'index'; // stay on the same page
 		}
 		else{
-			// Vérification des identifiants
+			// récupération de l'id
 			$query = "SELECT * FROM membre WHERE email = ?";
 			$req = $bdd->prepare($query);
 			$req->execute(array($email));
