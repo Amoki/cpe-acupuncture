@@ -1,5 +1,5 @@
 <?php
-function advancedSearch($meridien,$pathoType,$caract,$sympt,$motsCles)
+function advancedSearch($meridien, $pathoType, $caract ,$sympt ,$motsCles)
 {
 	//$meridien = "Du Mai"
 	//$pathoType = "mv";

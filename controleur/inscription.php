@@ -24,9 +24,9 @@ else if($mdp != $mdp_confirm){
 }
 else {
 	/* On teste l'existence de l'adresse mail dans la base de données */
-	$query_test = "SELECT * FROM membre WHERE email='$email'";
+	$query_test = "SELECT * FROM membre WHERE email = ?";
 	$result = $bdd ->prepare($query_test);
-	$result->execute();
+	$result->execute(array($email));
 
 	if ($result ->rowCount() > 0) {
 		$smarty->assign('fail', 'Cette adresse mail est déjà utilisée');
@@ -36,8 +36,9 @@ else {
 		$hashed_password = password_hash($mdp, PASSWORD_BCRYPT, array(
 			'salt' => $salt, 
 			));
-		$query = 'INSERT INTO membre(nom, prenom, email, mdp) VALUES("'.$nom.'", "'.$prenom.'", "'.$email.'", "'.$hashed_password.'")';
-		$req = $bdd->exec($query);
+		$query = 'INSERT INTO membre(nom, prenom, email, mdp) VALUES(?, ?, ?, ?)';
+		$req = $bdd ->prepare($query);
+		$req->execute(array($nom, $prenom, $email, $hashed_password));
 
 		if(! $req){
 			$smarty->assign('fail', "Une erreur inconnue est survenue, veuillez réessayer. Si le problème persiste, contactez l'administrateur");
@@ -45,9 +46,9 @@ else {
 		}
 		else{
 			// Vérification des identifiants
-			$query = "SELECT * FROM membre WHERE email = '$email'";
+			$query = "SELECT * FROM membre WHERE email = ?";
 			$req = $bdd->prepare($query);
-			$req->execute();
+			$req->execute(array($email));
 
 			$resultat = $req->fetch();
 

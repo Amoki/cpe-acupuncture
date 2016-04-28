@@ -1,12 +1,10 @@
 <?php
-include("connectBD.php");
 
 function pathTypeOfMerid($meridien)
 {
+	global $bdd;
 	//Si aucun meridien selectionné: $meridien = "default"
 
-	$connexion=connectBD();
-	
 	if($meridien=="default"){
 	/* Requête SELECT */
 	$rawquery = 'SELECT DISTINCT p.type
@@ -16,14 +14,14 @@ function pathTypeOfMerid($meridien)
 	$rawquery = 'SELECT DISTINCT p.type
 					FROM patho p 
 					JOIN meridien m ON m.code=p.mer
-					WHERE m.nom ="'.$meridien.'"';
+					WHERE m.nom = ?';
 	}
 
 
-	$query = $connexion ->prepare($rawquery);
+	$query = $bdd ->prepare($rawquery);
 	
 
-	$query->execute();
+	$query->execute(array($meridien));
 
 	$pathoType = array();
 
@@ -37,5 +35,4 @@ function pathTypeOfMerid($meridien)
 	return $pathoType;
 }
 
-pathTypeOfMerid("Du Mai");
 ?>

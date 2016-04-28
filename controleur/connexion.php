@@ -9,10 +9,10 @@
 	));
 
 	// Vérification des identifiants
-	$query = "SELECT * FROM membre WHERE email = '$email' AND mdp = '$mdp'";
+	$query = "SELECT * FROM membre WHERE email = ? AND mdp = ?";
 
 	$req = $bdd->prepare($query);
-	$req->execute();
+	$req->execute(array($email, $mdp));
 
 	$resultat = $req->fetch();
 
