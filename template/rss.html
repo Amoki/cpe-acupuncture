@@ -1,7 +1,11 @@
-    <div class="col-md-4 col-sm-12"> <!-- Flux RSS -->
-      <div class="jumbotron">
-        <h2>Flux RSS</h2>
-        <p>Endroit réservé au flux rss</p>
-        
-      </div>
-    </div>
+<div class="col-md-4 col-sm-12"> <!-- Flux RSS -->
+  <h2> Flux RSS: </h2>
+  <div class="jumbotron" id="rss-feed">
+  </div>
+</div>
+<script src="/static/js/jquery.rss.min.js"></script>
+<script>
+	jQuery(function($) {
+		$("#rss-feed").rss("http://www.news-medical.net/tag/feed/Acupuncture.aspx"});
+	})
+</script>
