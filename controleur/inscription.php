@@ -7,12 +7,13 @@ $smarty->assign('fail', false);
 include(_PATH_.'config.php');
 
 /* Récupération des données depuis le formulaire d'inscription */
-$email = $_POST['e-mail'];
+$email = $_POST['mail'];
 $mdp = $_POST['password'];
 $nom = $_POST['lastname'];
 $prenom = $_POST['name'];
-$email_confirm = $_POST['e-mail_confirm'];
+$email_confirm = $_POST['mail_confirm'];
 $mdp_confirm = $_POST['password_confirm'];
+
 
 if($email != $email_confirm){
 	$smarty->assign('fail', 'Les adresses mails que vous avez saisies sont différentes. Veuillez recommencer.');
