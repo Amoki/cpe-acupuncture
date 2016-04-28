@@ -19,7 +19,7 @@
 	}
 	else
 	{
-		$_POST["mot_patho"]=explode(", ", $_POST["mot_patho"]);
+		$_POST["mot_patho"] = array_map('trim', explode(",", $_POST["mot_patho"]));
 	}
 	if (!isset($_POST["symptomes"]) || $_POST["symptomes"]=="")
 	{
@@ -27,7 +27,7 @@
 	}
 	else
 	{
-		$_POST["symptomes"]=explode(", ", $_POST["symptomes"]);
+		$_POST["symptomes"] = array_map('trim', explode(",", $_POST["symptomes"]));
 	}
 
 	$liste_patho = advancedSearch($_POST["meridien"],$_POST["type_patho"],$_POST["cbCaract"], $_POST["symptomes"], $_POST["mot_patho"]);
