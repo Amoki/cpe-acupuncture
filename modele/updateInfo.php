@@ -4,33 +4,39 @@ function updateInfo($id, $mail, $password, $nom, $prenom){
 	$query = 'UPDATE membre SET ';
 
 	$fill = '';
+	$params = array();
 
 	if (isset($mail)) {
-		$query .= " email = '$mail' ";
+		$query .= " email = ? ";
+		array_push($param, $mail);
 		$fill = ',';
 
 	}
 	if (isset($password) && $password !='') {
 		$query .= $fill;
-		$query .= " mdp = '$password' ";
+		$query .= " mdp = ? ";
+		array_push($param, $password);
 		$fill = ',';
 	}
 	if (isset($nom)) {
 		$query .= $fill;
-		$query .= " nom = '$nom' ";
+		$query .= " nom = ? ";
+		array_push($param, $nom);
 		$fill = ',';
 	}
 	if (isset($prenom)) {
 		$query .= $fill;
-		$query .= " prenom = '$prenom' ";
+		$query .= " prenom = ? ";
+		array_push($param, $prenom);
 		$fill = ',';
 	}
 
+	$query .= " WHERE id = ?";
 
-	$query .= " WHERE id = $id";
+	array_push($param, $id);
 
 	$res_query = $bdd ->prepare($query);
-	$res_query->execute();
+	$res_query->execute($param);
 
 	$res = $res_query->fetch();
 

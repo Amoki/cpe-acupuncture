@@ -12,5 +12,4 @@
 
 		$smarty->assign('success', 'Vos données ont bien été modifiées');
 	}
-
 ?>

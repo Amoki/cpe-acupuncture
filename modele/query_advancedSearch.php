@@ -1,6 +1,10 @@
 <?php
 function advancedSearch($meridien, $pathoType, $caract ,$sympt ,$motsCles)
 {
+
+	// ! Cette requête n'est pas sécurisée...
+
+
 	//$meridien = "Du Mai"
 	//$pathoType = "mv";
 	//$caract = ["p","v"];

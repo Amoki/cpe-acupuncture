@@ -17,14 +17,14 @@ $connexion=connectBD();
 									WHERE' ;
 	$val=1;
 	foreach ($array as $value) {
-	if ($val==1) {
-		$val=0;
-	}
-	else{
-		$rawquery.=' AND ';
-	}
+		if ($val==1) {
+			$val=0;
+		}
+		else{
+			$rawquery.=' AND ';
+		}
 
-	$rawquery.=' k.name LIKE "'.$value.'"';
+		$rawquery.=' k.name LIKE "'.$value.'"';
 	}
 
 	$query = $connexion ->prepare($rawquery);
