@@ -2,9 +2,10 @@
 {block name=title}Acupuncture et médecine chinoise - Mon compte{/block}
 {block name=content}
 <div class="col-md-8 col-sm-12"> <!-- Formulaires -->
+  {if isset($success)}<div class="alert alert-success">{$success}</div>{/if}
   <div class="jumbotron text-center">
     <h2 role="heading" aria-level=2>Mon compte</h2>
-    <form id="form_create_account" role="form" action="/account/update" method="post">
+    <form id="form_create_account" role="form" action="/account/account" method="post">
       <div class="form-group">
         <div class="row">
           <div class="row"> 

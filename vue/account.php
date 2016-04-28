@@ -1,5 +1,6 @@
 <?php
-include(_PATH_.'/modele/user.php');
+require(_PATH_.'/modele/user.php');
+
 $user = getuserinfo($_SESSION['id']);
 
 $smarty->assign('nom', $user['nom']);
