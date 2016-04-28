@@ -7,8 +7,8 @@ $smarty->assign('fail', false);
 include(_PATH_.'config.php');
 
 /* Récupération des données depuis le formulaire d'inscription */
-$email = $_POST['mail'];
-$mdp = $_POST['mdp'];
+$email = $_POST['e-mail'];
+$mdp = $_POST['password'];
 $nom = $_POST['lastname'];
 $prenom = $_POST['name'];
 $email_confirm = $_POST['e-mail_confirm'];
