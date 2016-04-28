@@ -1273,12 +1273,6 @@ CREATE TABLE IF NOT EXISTS `membre` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Contenu de la table `membre`
---
-
-INSERT INTO `membre` (`ID`, `email`, `nom`, `prenom`, `mdp`, `avatar`) VALUES
-(1, 'monmail@gmail.com', 'COPTER', 'Eli', 'petitlapin', NULL);
 
 -- --------------------------------------------------------
 
