@@ -28,14 +28,14 @@ function updateInfo($id, $mail, $password, $nom, $prenom){
 
 
 	$query .= " WHERE id = $id";
-	var_dump($query);
+	//var_dump($query);
 
 	$res_query = $bdd ->prepare($query);
 	$res_query->execute();
 
 	$res = $res_query->fetch();
 
-	var_dump($res);
+	//var_dump($res);
 
 }
 ?>
